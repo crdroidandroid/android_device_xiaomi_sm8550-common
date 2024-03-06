@@ -28,6 +28,7 @@ namespace_imports = [
     'hardware/qcom-caf/wlan',
     'hardware/qcom-caf/sm8550',
     'hardware/xiaomi',
+    'vendor/qcom/opensource/commonsys/display',
     'vendor/qcom/opensource/commonsys-intf/display',
     'vendor/qcom/opensource/dataservices',
 ]
@@ -40,6 +41,7 @@ lib_fixups: lib_fixups_user_type = {
     libs_clang_rt_ubsan: lib_fixup_remove_arch_suffix,
     libs_proto_3_9_1: lib_fixup_vendorcompat,
     (
+        'vendor.qti.hardware.wifidisplaysession@1.0',
         'vendor.qti.imsrtpservice@3.0',
         'vendor.qti.imsrtpservice@3.1',
         'vendor.qti.diaghal@1.0',
