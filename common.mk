@@ -210,6 +210,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
 
+# IFAA
+PRODUCT_PACKAGES += \
+    IFAAService
+
 # Init
 PRODUCT_PACKAGES += \
     init.qcom.rc \
