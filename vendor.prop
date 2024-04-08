@@ -231,6 +231,10 @@ persist.vendor.fingerprint.sensor_modules=goodix_fod
 # FM
 vendor.hw.fm.init=0
 
+# HWUI
+debug.hwui.use_hint_manager=true
+debug.hwui.target_cpu_time_percent=30
+
 # Gatekeeper
 vendor.gatekeeper.disable_spu=true
 
