@@ -503,9 +503,6 @@ subsystem mem_buf_vm
 #USB mode setting
 /sys/bus/platform/devices/a600000.ssusb    mode        0660  system  usb
 
-#Memory Offline
-/sys/devices/system/memory/memory* state    0660 system system
-
 /sys/devices/virtual/hdcp/msm_hdcp  min_level_change 0664    system  graphics
 
 #KGSL

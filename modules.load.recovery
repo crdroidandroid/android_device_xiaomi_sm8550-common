@@ -110,7 +110,6 @@ sys_pm_vx.ko
 plh_scmi.ko
 qdss_bridge.ko
 qcom_cpu_vendor_hooks.ko
-mem-offline.ko
 fsa4480-i2c.ko
 msm_show_epoch.ko
 gh_tlmm_vm_mem_access.ko
