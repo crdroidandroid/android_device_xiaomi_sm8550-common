@@ -121,6 +121,8 @@ vendor/lib64/soundfx/libquasar.so
 vendor/lib64/soundfx/libshoebox.so
 vendor/lib64/soundfx/libswgamedap.so
 vendor/lib64/soundfx/libswvqe.so
+vendor/lib64/libswspatializer_ext.so
+vendor/lib64/libdlbpreg.so
 
 # BatterySecret
 vendor/bin/batterysecret
