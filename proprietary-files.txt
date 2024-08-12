@@ -93,13 +93,8 @@ vendor/lib64/libdsd2pcm.so
 vendor/lib64/hw/sound_trigger.primary.kalama.so
 vendor/etc/vintf/manifest/manifest_non_qmaa_extn.xml:vendor/etc/vintf/manifest/manifest_non_qmaa_extn_vendor.xml
 vendor/etc/vintf/manifest/manifest_non_qmaa.xml:vendor/etc/vintf/manifest/manifest_non_qmaa_vendor.xml
-vendor/lib64/libeai_fixed.so
-vendor/lib64/libeai_float.so
 vendor/lib64/libfcsam.so;FIX_SONAME
 vendor/lib64/libkaraokepal.so;DISABLE_CHECKELF
-vendor/lib64/liblistensoundmodel2vendor.so
-vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0.so
 vendor/lib64/libmiam.so;FIX_SONAME
 vendor/lib64/libmisfpsop.so
 vendor/lib64/libmisoundsa.so
