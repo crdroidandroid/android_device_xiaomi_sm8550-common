@@ -39,17 +39,30 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(final Context context, Intent intent) {
-        if (DEBUG)
-            Log.d(TAG, "Received boot completed intent");
-        DozeUtils.onBootCompleted(context);
-        ThermalUtils.startService(context);
-        RefreshUtils.startService(context);
-        overrideHdrTypes(context);
-        // Pocket
-        PocketService.startService(context);
-        //thermal tile service
-        Intent thermalServiceIntent = new Intent(context, ThermalTileService.class);
-        context.startServiceAsUser(thermalServiceIntent, UserHandle.CURRENT);
+        if (DEBUG) Log.i(TAG, "Received intent: " + intent.getAction());
+        switch (intent.getAction()) {
+            case Intent.ACTION_LOCKED_BOOT_COMPLETED:
+                onLockedBootCompleted(context);
+                break;
+            case Intent.ACTION_BOOT_COMPLETED:
+                onBootCompleted(context);
+                break;
+        }
+    }
+
+    private static void onLockedBootCompleted(Context context) {
+            DozeUtils.onBootCompleted(context);
+            ThermalUtils.startService(context);
+            RefreshUtils.startService(context);
+            overrideHdrTypes(context);
+
+            // Pocket service
+            PocketService.startService(context);
+
+            // Thermal tile service
+            Intent thermalServiceIntent = new Intent(context, ThermalTileService.class);
+            context.startServiceAsUser(thermalServiceIntent, UserHandle.CURRENT);
+
     }
 
     private static void overrideHdrTypes(Context context) {
@@ -58,5 +71,8 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         dm.overrideHdrTypes(Display.DEFAULT_DISPLAY, new int[]{
                 HdrCapabilities.HDR_TYPE_DOLBY_VISION, HdrCapabilities.HDR_TYPE_HDR10,
                 HdrCapabilities.HDR_TYPE_HLG, HdrCapabilities.HDR_TYPE_HDR10_PLUS});
+    }
+
+    private static void onBootCompleted(Context context) {
     }
 }
