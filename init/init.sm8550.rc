@@ -22,6 +22,7 @@ on boot
     # Allow system to modify charging current
     chown system system /sys/class/power_supply/battery/constant_charge_current
     chmod 0664 /sys/class/power_supply/battery/constant_charge_current
+    
     #HBM
     chmod 0666 /sys/class/backlight/panel0-backlight/brightness
     chmod 0666 /sys/class/backlight/panel0-backlight/max_brightness
