@@ -1,6 +1,8 @@
 allow init sysfs_goodix_touch:file w_file_perms;
 allow init vendor_configs_file:dir mounton;
 allow init vendor_configs_file:file mounton;
+allow vendor_init cgroup:file r_file_perms;
+allow vendor_init exported3_system_prop:property_service set;
 
 allow init vendor_sysfs_power_supply:file { setattr };
 r_dir_file(init, sysfs_batteryinfo)

@@ -31,6 +31,7 @@ import android.view.Display.HdrCapabilities;
 
 import org.lineageos.settings.doze.DozeUtils;
 import org.lineageos.settings.doze.PocketService;
+import org.lineageos.settings.powertools.PowerProfileTileService;
 import org.lineageos.settings.thermal.ThermalUtils;
 import org.lineageos.settings.thermal.ThermalTileService;
 import org.lineageos.settings.refreshrate.RefreshUtils;
@@ -81,12 +82,17 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         ThermalUtils.getInstance(context).startService();
         context.startServiceAsUser(new Intent(context, ThermalTileService.class), UserHandle.CURRENT);
 
+<<<<<<< HEAD
         // Start Refresh Rate Service
         RefreshUtils.startService(context);
 
         // Start Pocket Mode Service
         PocketService.startService(context);
 
+=======
+        // Start Power Profile Tile Service
+        context.startServiceAsUser(new Intent(context, PowerProfileTileService.class), UserHandle.CURRENT);
+>>>>>>> 83244d3 (sm8450-common: parts: Introduce PowerTools v3.0)
     }
 
     private void overrideHdrTypes(Context context) {
