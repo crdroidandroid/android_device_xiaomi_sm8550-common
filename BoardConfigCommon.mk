@@ -6,6 +6,8 @@
 
 COMMON_PATH := device/xiaomi/sm8550-common
 
+SELINUX_IGNORE_NEVERALLOWS := true
+
 # A/B
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS := \
