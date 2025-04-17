@@ -6,6 +6,8 @@
 
 COMMON_PATH := device/xiaomi/sm8550-common
 
+SELINUX_IGNORE_NEVERALLOWS := true
+
 # A/B
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS := \
@@ -186,6 +188,7 @@ ENABLE_VENDOR_RIL_SERVICE := true
 # SEPolicy
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/public
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 
 # System properties

@@ -31,8 +31,6 @@ import java.util.Map;
 import org.lineageos.settings.autohbm.AutoHbmActivity;
 import org.lineageos.settings.autohbm.AutoHbmTileService;
 import org.lineageos.settings.autohbm.HbmTileService;
-import org.lineageos.settings.touchsampling.TouchSamplingSettingsActivity;
-import org.lineageos.settings.touchsampling.TouchSamplingTileService;
 import org.lineageos.settings.thermal.ThermalSettingsActivity;
 import org.lineageos.settings.thermal.ThermalTileService;
 import org.lineageos.settings.refreshrate.RefreshActivity;
@@ -47,7 +45,6 @@ public final class TileHandlerActivity extends Activity {
     static {
         TILE_ACTIVITY_MAP.put(AutoHbmTileService.class.getName(), AutoHbmActivity.class);
         TILE_ACTIVITY_MAP.put(HbmTileService.class.getName(), AutoHbmActivity.class);
-        TILE_ACTIVITY_MAP.put(TouchSamplingTileService.class.getName(), TouchSamplingSettingsActivity.class);
         TILE_ACTIVITY_MAP.put(ThermalTileService.class.getName(), ThermalSettingsActivity.class);
         TILE_ACTIVITY_MAP.put(RefreshTileService.class.getName(), RefreshActivity.class);
     }
