@@ -28,9 +28,3 @@ r_dir_file(system_app, rootfs)
 # High Brightness Mode
 allow system_app vendor_sysfs_graphics:dir search;
 allow system_app vendor_sysfs_graphics:file rw_file_perms;
-
-# Turbo Charging
-allow system_app vendor_sysfs_power_supply:file { read write open setattr getattr };
-allow system_app vendor_sysfs_power_supply:dir search;
-allow system_app vendor_sysfs_battery_supply:file { read write open setattr getattr };
-allow system_app vendor_sysfs_battery_supply:dir search;
