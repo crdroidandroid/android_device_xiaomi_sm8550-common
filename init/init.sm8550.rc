@@ -19,6 +19,10 @@ on boot
     chmod 0664 /sys/devices/virtual/mi_display/disp_feature/disp-DSI-0/disp_param
     chmod 0664 /sys/class/touch/touch_dev/fod_press_status
 
+    # Allow system to modify charging current
+    chown system system /sys/class/power_supply/battery/constant_charge_current
+    chmod 0664 /sys/class/power_supply/battery/constant_charge_current
+
 on post-fs-data
     mkdir /data/vendor/misc 01771 system system
     mkdir /data/vendor/misc/mi_fp 0770 system system
@@ -34,3 +38,7 @@ on post-fs-data
 on property:vendor.post_boot.parsed=1
      # Set default thermal profile
      write /sys/class/thermal/thermal_message/sconfig 0
+
+# Monitor and apply Hyper Charging value via system property persist.sys.turbo_charge_current
+on property:persist.sys.turbo_charge_current=*
+    write /sys/class/power_supply/battery/constant_charge_current ${persist.sys.turbo_charge_current}

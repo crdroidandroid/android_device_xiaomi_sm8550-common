@@ -32,6 +32,9 @@ import com.xiaomi.settings.autohbm.AutoHbmActivity;
 import com.xiaomi.settings.autohbm.AutoHbmTileService;
 import com.xiaomi.settings.autohbm.HbmTileService;
 
+import com.xiaomi.settings.turbocharging.TurboChargingTile;
+import com.xiaomi.settings.turbocharging.TurboChargingActivity;
+
 public final class TileHandlerActivity extends Activity {
     private static final String TAG = "TileHandlerActivity";
 
@@ -41,6 +44,7 @@ public final class TileHandlerActivity extends Activity {
     static {
         TILE_ACTIVITY_MAP.put(AutoHbmTileService.class.getName(), AutoHbmActivity.class);
         TILE_ACTIVITY_MAP.put(HbmTileService.class.getName(), AutoHbmActivity.class);
+        TILE_ACTIVITY_MAP.put(TurboChargingTile.class.getName(), TurboChargingActivity.class);
     }
 
     @Override

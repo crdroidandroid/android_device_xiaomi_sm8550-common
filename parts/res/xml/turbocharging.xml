@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="@string/turbo_charge_title">
+
+    <com.android.settingslib.widget.MainSwitchPreference
+        android:key="turbo_enable"
+        android:title="@string/turbo_charge_title"
+        android:summary="@string/turbo_charge_summary" />
+
+    <Preference
+        android:key="hypercharge_info"
+        android:title="@string/hypercharge_info_title"
+        android:summary="@string/hypercharge_info_summary"
+        android:selectable="false"
+        android:icon="@android:drawable/ic_dialog_info" />
+        
+</PreferenceScreen>
