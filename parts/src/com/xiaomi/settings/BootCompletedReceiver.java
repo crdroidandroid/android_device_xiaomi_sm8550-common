@@ -10,11 +10,12 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.display.DisplayManager;
-import android.os.UserHandle;
 import android.util.Log;
 import android.view.Display;
 import android.view.Display.HdrCapabilities;
 
+import com.xiaomi.settings.thermal.ThermalService;
+import com.xiaomi.settings.thermal.ThermalUtils;
 import com.xiaomi.settings.turbocharging.TurboChargingService;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
@@ -37,6 +38,18 @@ public class BootCompletedReceiver extends BroadcastReceiver {
             if (DEBUG) Log.d(TAG, "Started TurboChargingService");
         } catch (Exception e) {
             Log.e(TAG, "Failed to start TurboChargingService", e);
+        }
+
+        // Start ThermalService
+        try {
+            ThermalUtils thermalUtils = ThermalUtils.getInstance(context);
+            if (thermalUtils.isEnabled()) {
+                Intent thermalServiceIntent = new Intent(context, ThermalService.class);
+                context.startService(thermalServiceIntent);
+                if (DEBUG) Log.d(TAG, "Started ThermalService");
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Failed to start ThermalService", e);
         }
 
         // Override HDR types to enable Dolby Vision

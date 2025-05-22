@@ -55,11 +55,17 @@
     <string name="auto_hbm_disable_time_summary">Duration in seconds for which HBM is deactivated if the light threshold falls below the set level</string>   
 
      <!-- Thermal Profile -->
-    <string name="thermalprofile_title">Thermal profile</string>
+    <string name="thermalprofile_title">Thermal Profile</string>
     <string name="thermalprofile_default">Default</string>
+    <string name="thermalprofile_battery">Battery Saver</string>
     <string name="thermalprofile_game">Game</string>
-    <string name="thermalprofile_battery">Battery</string>
     <string name="thermalprofile_unknown">Unknown</string>
+
+    <string name="thermal_title">Thermal Profiles</string>
+    <string name="thermal_enable_title">Enable per app thermal profiles</string>
+    <string name="thermal_enable_summary">Enable Per App Thermal</string>
+
+    <string name="thermal_tile_disabled_subtitle">Controlled per app</string>
 
     <!-- Charging Speed Control -->
     <string name="turbo_charge_title">Xiaomi Hypercharge</string>
