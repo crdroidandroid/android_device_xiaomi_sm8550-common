@@ -1,6 +1,11 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
 ## are from Xiaomi 13 Pro (OS2.0.200.7.VMBCNXM).
 
+# Current blobs with ELF checks disabled:
+# audio.primary.kalama.so depends on liblx-osal and vendor.qti.hardware.AGMIPC@1.0-impl, which are gnu makefile targets
+# libagm depends on libar-gsl, libats and liblx-osal, which are gnu makefile targets
+# libmcs depends on libar-acdb, libats and liblx-osal, which are gnu makefile targets
+
 # ACDBs
 vendor/etc/acdbdata/IDP_UPD/IDP_UPD_acdb_cal.acdb
 vendor/etc/acdbdata/IDP_UPD/IDP_UPD_workspaceFileXml.qwsp
@@ -20,7 +25,6 @@ vendor/bin/adsprpcd
 vendor/bin/loadalgo
 vendor/etc/init/vendor.qti.adsprpc-guestos-service.rc
 vendor/lib64/libadsp_default_listener.so
-vendor/lib64/libadsprpc.so
 vendor/lib64/libloadalgo_stub.so
 
 # ANT+
@@ -63,7 +67,7 @@ vendor/etc/misound_asc_model.tflite
 vendor/etc/models/acd/event.eai
 vendor/etc/models/acd/music.eai
 vendor/etc/models/acd/speech.eai
-vendor/lib64/hw/audio.primary.kalama.so
+vendor/lib64/hw/audio.primary.kalama.so;DISABLE_CHECKELF
 vendor/lib64/hw/gyro_fusion_interface.so
 vendor/etc/seccomp_policy/c2audio.vendor.base-arm64.policy
 vendor/etc/seccomp_policy/c2audio.vendor.ext-arm64.policy
@@ -74,11 +78,7 @@ vendor/lib64/libFlacSwDec.so
 vendor/lib64/libPeripheralStateUtils.so
 vendor/lib64/lib_misound_asc.so
 vendor/lib64/libadm.so
-vendor/lib64/libar-acdb.so
-vendor/lib64/libar-gpr.so
-vendor/lib64/libar-gsl.so
 vendor/lib64/libar-pal.so;DISABLE_CHECKELF
-vendor/lib64/libats.so
 vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libaudiocloudctrl.so
 vendor/lib64/libcapiv2svacnnvendor.so
@@ -94,9 +94,8 @@ vendor/lib64/libeai_float.so
 vendor/lib64/libfcsam.so;FIX_SONAME
 vendor/lib64/libkaraokepal.so;DISABLE_CHECKELF
 vendor/lib64/liblistensoundmodel2vendor.so
-vendor/lib64/liblx-ar_util.so
-vendor/lib64/liblx-osal.so
-vendor/lib64/libmcs.so
+vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0-impl.so
+vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0.so
 vendor/lib64/libmiam.so;FIX_SONAME
 vendor/lib64/libmisfpsop.so
 vendor/lib64/libmisoundsa.so
@@ -107,15 +106,12 @@ vendor/lib64/libspatializerparamstorage.so
 vendor/lib64/libvui_dmgr.so
 vendor/lib64/libvui_dmgr_client.so
 vendor/lib64/libxlog.so
-vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0.so
 
 # Audio
 vendor/lib64/vendor.qti.hardware.pal@1.0-impl.so
-
-# Audio AGM
-vendor/lib64/libagm.so
-vendor/lib64/vendor.qti.hardware.AGMIPC@1.0-impl.so
+vendor/lib64/libadsprpc.so
+vendor/lib64/libagm.so;DISABLE_CHECKELF
+vendor/lib64/libmcs.so;DISABLE_CHECKELF
 
 # Audio FX modules
 vendor/lib64/soundfx/libasphere.so
@@ -140,9 +136,6 @@ vendor/etc/vintf/manifest/bttpi-saidl.xml
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/hw/android.hardware.bluetooth@1.1-impl-qti.so
 vendor/lib64/hw/vendor.qti.hardware.bttpi-impl.so
-vendor/lib64/lib_bt_aptx.so
-vendor/lib64/lib_bt_ble.so
-vendor/lib64/lib_bt_bundle.so
 vendor/lib64/lib_bt_lhdc.so
 vendor/lib64/libbtnv.so
 vendor/lib64/libsoc_helper.so
