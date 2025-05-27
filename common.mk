@@ -281,7 +281,9 @@ PRODUCT_PACKAGES += \
     DeviceAsWebcamResCommon \
     SystemUIOverlayCommon \
     SettingsOverlayCommon \
-    TelephonyOverlayCommon
+    TelephonyOverlayCommon \
+    EuiccGoogle \
+    FrameworksEuicc
 
 # Partitions
 PRODUCT_PACKAGES += \
@@ -369,6 +371,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml \
     frameworks/native/data/etc/android.hardware.telephony.mbms.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.mbms.xml
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/permissions/privapp-permissions-euiccgoogle.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-euiccgoogle.xml
+    
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal-service.qti
