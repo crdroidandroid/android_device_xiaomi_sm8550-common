@@ -439,7 +439,13 @@ PRODUCT_PACKAGES += \
     libwfdaac_vendor
 
 # Vibrator
-$(call inherit-product, vendor/qcom/opensource/vibrator/vibrator-vendor-product.mk)
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.vibrator.service.xiaomi
+
+PRODUCT_COPY_FILES += \
+    vendor/qcom/opensource/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
+
+$(call soong_config_set, XIAOMI_VIBRATOR, USE_EFFECT_STREAM, true)
 
 # Vendor configurations
 $(call inherit-product, vendor/xiaomi/sm8550-common/sm8550-common-vendor.mk)
