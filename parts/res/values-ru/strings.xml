@@ -104,5 +104,34 @@
     <string name="auto_hbm_enable_time_title">Время активации</string>
     <string name="auto_hbm_enable_time_summary">Длительность (в секундах), в течение которой порог освещенности должен быть достигнут для активации HBM</string>
     <string name="auto_hbm_disable_time_title">Время отключения</string>
-    <string name="auto_hbm_disable_time_summary">Длительность (в секундах), в течение которой HBM отключается, если освещенность падает ниже заданного уровня</string>    
+    <string name="auto_hbm_disable_time_summary">Длительность (в секундах), в течение которой HBM отключается, если освещенность падает ниже заданного уровня</string>
+
+    <!-- GameBar Overlay -->
+    <string name="game_bar_title">GameBar</string>
+    <string name="game_bar_summary">Включить системный оверлей (FPS, Temp и т. д.)</string>
+    <string name="overlay_permission_required">Требуется разрешение на наложение</string>
+    <string name="overlay_permission_granted">Разрешение на наложение предоставлено</string>
+    <string name="overlay_permission_denied">Разрешение на наложение отклонено</string>
+    <string name="game_bar_tile_label">GameBar</string>
+    <string name="game_bar_tile_description">Включить/выключить игровой оверлей</string>
+    
+    <!-- Power Profile Strings -->
+    <string name="powerprofile_tile_label">Профиль питания</string>
+    <string name="powerprofile_mode_balance">Сбалансированный</string>
+    <string name="powerprofile_mode_performance">Производительность</string>
+    <string name="powerprofile_mode_battery_saver">Экономия заряда батареи</string>
+    <string name="powerprofile_mode_gaming">Игровой</string>
+    <string name="powerprofile_mode_unknown">Неизвестный режим</string>
+    <string name="powerprofile_tile_disabled_subtitle">Отключено (включены температурные профили для каждого приложения)</string>
+    <string name="gaming_mode_title">Ускорение игры</string>
+    <string name="gaming_mode_notification">Режим ускорения игры теперь активирован для оптимальной производительности в играх.</string>
+    <string name="power_profile_footer_summary">Примечание: более высокие частоты (например, графический процессор более 900 МГц и более высокая тактовая частота основного ядра) доступны только в режиме Game Boost.</string>
+
+    <!-- Powertools Main Title -->
+    <string name="Powertools_title">Powertools</string>
+    <string name="Powertools_summary">Настройте профили питания, частоты ЦП/ГП и параметры регулятора для оптимизации производительности и эффективности</string>
+
+    <!-- GPU Strings -->
+    <string name="gpu_min_frequency">Минимальная частота графического процессора</string>
+    <string name="gpu_max_frequency">Максимальная частота графического процессора</string>  
 </resources>
