@@ -36,6 +36,3 @@ ro.ril.oem.wifimac                      u:object_r:vendor_radio_prop:s0
 
 # Perf
 sys.perf_mode_active           u:object_r:exported3_system_prop:s0
-
-# XiaomiParts
-persist.sys.turbo_charge_current    u:object_r:exported_system_prop:s0
