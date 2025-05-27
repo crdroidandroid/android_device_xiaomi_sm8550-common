@@ -322,6 +322,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml
 
 # Sensors
+$(call soong_config_set, SENSORS_XIAOMI, USES_SINGLE_TAP_SENSOR, true)
+$(call soong_config_set, SENSORS_XIAOMI, USES_DOUBLE_TAP_SENSOR, true)
+$(call soong_config_set, SENSORS_XIAOMI, USES_UDFPS_SENSOR, true)
+
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.xiaomi-multihal \
     sensors.dynamic_sensor_hal
