@@ -139,4 +139,5 @@
     <string name="htsr_title">Touch Responsiveness</string>
     <string name="htsr_enable_title">Increase Touch Responsiveness</string>
     <string name="htsr_enable_summary">Increases touch polling rate to decrease latency</string>
+    <string name="touch_sampling_tile_label">Touch Boost</string>
 </resources>

@@ -139,4 +139,5 @@
     <string name="htsr_title">Скорость отклика касаний</string>
     <string name="htsr_enable_title">Увеличение скорости отклика касаний</string>
     <string name="htsr_enable_summary">Увеличивает частоту опроса касаний для уменьшения задержки</string>
+    <string name="touch_sampling_tile_label">Усиление прикосновения</string>
 </resources>
