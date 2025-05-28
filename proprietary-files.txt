@@ -1,5 +1,5 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from Xiaomi 13 Pro (OS2.0.200.7.VMBCNXM).
+## are from Xiaomi 13 AQ3A.240912.001 OS2.0.200.9.VMCCNXM
 
 # Current blobs with ELF checks disabled:
 # audio.primary.kalama.so depends on liblx-osal and vendor.qti.hardware.AGMIPC@1.0-impl, which are gnu makefile targets
