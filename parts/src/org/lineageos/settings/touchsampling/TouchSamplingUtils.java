@@ -43,6 +43,6 @@ public final class TouchSamplingUtils {
     public static void restoreSamplingValue(Context context) {
         SharedPreferences sharedPref = context.getSharedPreferences(TouchSamplingSettingsFragment.SHAREDHTSR, Context.MODE_PRIVATE);
         Integer htsrstate = sharedPref.getInt(TouchSamplingSettingsFragment.SHAREDHTSR, 0);
-        FileUtils.writeLine(HTSR_FILE, htsrstate.toString());
+        FileUtils.writeOneLine(HTSR_FILE, htsrstate.toString());
     }
 }
