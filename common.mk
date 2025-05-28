@@ -444,12 +444,11 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.vibrator.service
+    vendor.qti.hardware.vibrator.service \
+    android.hardware.vibrator-V1-ndk_platform.vendor
 
 PRODUCT_COPY_FILES += \
-    vendor/qcom/opensource/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
-
-$(call soong_config_set, XIAOMI_VIBRATOR, USE_EFFECT_STREAM, true)
+     vendor/qcom/opensource/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
 
 # Vendor configurations
 $(call inherit-product, vendor/xiaomi/sm8550-common/sm8550-common-vendor.mk)
