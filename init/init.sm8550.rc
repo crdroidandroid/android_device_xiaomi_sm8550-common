@@ -22,10 +22,6 @@ on boot
     # Allow system to modify charging current
     chown system system /sys/class/power_supply/battery/constant_charge_current
     chmod 0664 /sys/class/power_supply/battery/constant_charge_current
-    
-    # Touch
-    chown system system /sys/devices/virtual/touch/touch_dev/report_rate
-    chmod 0664 /sys/devices/virtual/touch/touch_dev/report_rate
 
     #HBM
     chmod 0666 /sys/class/backlight/panel0-backlight/brightness
