@@ -70,6 +70,9 @@ public class TouchSamplingService extends Service {
         super.onDestroy();
         Log.d(TAG, "TouchSamplingService stopped");
 
+        // PugzAreCute: Fix to allow disabling HSTR.
+        applyTouchSamplingRate(0);
+
         // Unregister the broadcast receiver
         if (mScreenUnlockReceiver != null) {
             unregisterReceiver(mScreenUnlockReceiver);
@@ -92,5 +95,14 @@ public class TouchSamplingService extends Service {
             Log.d(TAG, "Applying touch sampling rate: " + state);
             FileUtils.writeOneLine(TouchSamplingUtils.HTSR_FILE, Integer.toString(state));
         }
+    }
+
+    // PugzAreCute: Fix to allow disabling HSTR.
+    private void applyTouchSamplingRate(int state) {
+        String currentState = FileUtils.readOneLine(TouchSamplingUtils.HTSR_FILE);
+        if (currentState == null || !currentState.equals(Integer.toString(state))) {
+            Log.d(TAG, "Applying temporary touch sampling rate: " + state);
+            FileUtils.writeOneLine(TouchSamplingUtils.HTSR_FILE, Integer.toString(state));
+	    }
     }
 }
