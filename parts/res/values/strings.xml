@@ -134,4 +134,9 @@
     <!-- GPU Strings -->
     <string name="gpu_min_frequency">GPU Minimum Frequency</string>
     <string name="gpu_max_frequency">GPU Maximum Frequency</string>
+
+    <!-- High Touch Polling -->
+    <string name="htsr_title">Touch Responsiveness</string>
+    <string name="htsr_enable_title">Increase Touch Responsiveness</string>
+    <string name="htsr_enable_summary">Increases touch polling rate to decrease latency</string>
 </resources>

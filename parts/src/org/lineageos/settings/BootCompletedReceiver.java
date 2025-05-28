@@ -35,6 +35,7 @@ import org.lineageos.settings.powertools.PowerProfileTileService;
 import org.lineageos.settings.thermal.ThermalUtils;
 import org.lineageos.settings.thermal.ThermalTileService;
 import org.lineageos.settings.refreshrate.RefreshUtils;
+import org.lineageos.settings.touchsampling.TouchSamplingUtils;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
     private static final boolean DEBUG = false;
@@ -61,6 +62,9 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
             // Override HDR types
             overrideHdrTypes(context);
+
+            // High Touch polling rate
+            TouchSamplingUtils.restoreSamplingValue(context);
 
         } catch (Exception e) {
             Log.e(TAG, "Error during locked boot completed processing", e);

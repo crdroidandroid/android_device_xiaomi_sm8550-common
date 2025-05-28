@@ -134,4 +134,9 @@
     <!-- GPU Strings -->
     <string name="gpu_min_frequency">Минимальная частота графического процессора</string>
     <string name="gpu_max_frequency">Максимальная частота графического процессора</string>  
+
+    <!-- High Touch Polling -->
+    <string name="htsr_title">Скорость отклика касаний</string>
+    <string name="htsr_enable_title">Увеличение скорости отклика касаний</string>
+    <string name="htsr_enable_summary">Увеличивает частоту опроса касаний для уменьшения задержки</string>
 </resources>
