@@ -285,4 +285,8 @@
 
     <!-- The name of the package that will hold the dialer role by default. -->
     <string name="config_defaultDialer" translatable="false">com.google.android.dialer</string>
+
+    <!-- Should we vibrate on an icon animation of the shelf. This should only be active if the
+    vibrator is capable of subtle vibrations -->
+    <bool name="config_vibrateOnIconAnimation">true</bool>
 </resources>
