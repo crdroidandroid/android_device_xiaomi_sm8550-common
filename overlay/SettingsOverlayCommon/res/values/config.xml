@@ -32,4 +32,7 @@
 
     <!-- Show battery cycle count -->
     <bool name="config_show_battery_cycle_count" translatable="false">true</bool>
+
+    <!-- The number of vibration intensity levels supported by the device. -->
+    <integer name="config_vibration_supported_intensity_levels">3</integer>
 </resources>
