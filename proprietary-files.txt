@@ -1383,9 +1383,6 @@ vendor/lib64/libesesbprovision.so
 vendor/lib64/vendor.qti.esepowermanager@1.0.so
 vendor/lib64/vendor.qti.esepowermanager@1.1.so
 
-# eUICC - from lynx-user 14 UP1A.231005.007
-product/priv-app/EuiccGoogle/EuiccGoogle.apk|f1b7f3906ed81c6555191e6a9d350377b9710f11;PRESIGNED
-
 # Sensors
 odm/lib64/sensors.touch.detect.so
 vendor/bin/hw/vendor.qti.hardware.sensorscalibrate@1.0-service
