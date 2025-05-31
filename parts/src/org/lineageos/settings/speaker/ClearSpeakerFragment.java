@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 Paranoid Android
+ * Copyright (C) 2025 Paranoid Android
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,28 +18,26 @@ package org.lineageos.settings.speaker;
 
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
+import android.content.res.Resources;
 import android.media.AudioManager;
-import android.media.AudioAttributes;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
 import android.util.Log;
 
 import androidx.preference.Preference;
-import androidx.preference.PreferenceFragment;
+import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.SwitchPreference;
 
 import org.lineageos.settings.R;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
-public class ClearSpeakerFragment extends PreferenceFragment implements
+public class ClearSpeakerFragment extends PreferenceFragmentCompat implements
         Preference.OnPreferenceChangeListener {
 
     private static final String TAG = ClearSpeakerFragment.class.getSimpleName();
-
     private static final String PREF_CLEAR_SPEAKER = "clear_speaker_pref";
 
     private AudioManager mAudioManager;
@@ -51,11 +49,13 @@ public class ClearSpeakerFragment extends PreferenceFragment implements
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.clear_speaker_settings);
 
-        mClearSpeakerPref = (SwitchPreference) findPreference(PREF_CLEAR_SPEAKER);
-        mClearSpeakerPref.setOnPreferenceChangeListener(this);
+        mClearSpeakerPref = findPreference(PREF_CLEAR_SPEAKER);
+        if (mClearSpeakerPref != null) {
+            mClearSpeakerPref.setOnPreferenceChangeListener(this);
+        }
 
         mHandler = new Handler();
-        mAudioManager = (AudioManager) getContext().getSystemService(Context.AUDIO_SERVICE);
+        mAudioManager = (AudioManager) requireContext().getSystemService(Context.AUDIO_SERVICE);
     }
 
     @Override
@@ -65,9 +65,7 @@ public class ClearSpeakerFragment extends PreferenceFragment implements
             if (value) {
                 if (startPlaying()) {
                     mHandler.removeCallbacksAndMessages(null);
-                    mHandler.postDelayed(() -> {
-                        stopPlaying();
-                    }, 30000);
+                    mHandler.postDelayed(this::stopPlaying, 30000);
                     return true;
                 }
             }
@@ -81,12 +79,13 @@ public class ClearSpeakerFragment extends PreferenceFragment implements
         stopPlaying();
     }
 
-    public boolean startPlaying() {
+    private boolean startPlaying() {
         mAudioManager.setParameters("status_earpiece_clean=on");
         mMediaPlayer = new MediaPlayer();
-        getActivity().setVolumeControlStream(AudioManager.STREAM_MUSIC);
+        requireActivity().setVolumeControlStream(AudioManager.STREAM_MUSIC);
         mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         mMediaPlayer.setLooping(true);
+        
         try {
             AssetFileDescriptor file = getResources().openRawResourceFd(R.raw.clear_speaker_sound);
             try {
@@ -105,17 +104,47 @@ public class ClearSpeakerFragment extends PreferenceFragment implements
         return true;
     }
 
-    public void stopPlaying() {
+    private void stopPlaying() {
         if (mMediaPlayer != null) {
             if (mMediaPlayer.isPlaying()) {
                 mMediaPlayer.stop();
                 mMediaPlayer.reset();
                 mMediaPlayer.release();
-                mMediaPlayer=null;
+                mMediaPlayer = null;
             }
         }
         mAudioManager.setParameters("status_earpiece_clean=off");
-        mClearSpeakerPref.setEnabled(true);
-        mClearSpeakerPref.setChecked(false);
+        if (mClearSpeakerPref != null) {
+            mClearSpeakerPref.setEnabled(true);
+            mClearSpeakerPref.setChecked(false);
+        }
+    }
+
+    public static class SpeakerCleanerHelper {
+        private static final String TAG = "SpeakerCleanerHelper";
+        
+        public static void scheduleCleanTask(Context context, String frequency) {
+            AudioManager audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
+            
+            switch (frequency) {
+                case "daily":
+                    scheduleRecurringTask(context, TimeUnit.HOURS.toMillis(24));
+                    break;
+                case "weekly":
+                    scheduleRecurringTask(context, TimeUnit.DAYS.toMillis(7));
+                    break;
+                case "monthly":
+                    scheduleRecurringTask(context, TimeUnit.DAYS.toMillis(30));
+                    break;
+                case "after_call":
+                    break;
+                case "on_detect":
+                    break;
+            }
+        }
+
+        private static void scheduleRecurringTask(Context context, long interval) {
+            // Implementation for scheduling recurring task
+        }
     }
 }

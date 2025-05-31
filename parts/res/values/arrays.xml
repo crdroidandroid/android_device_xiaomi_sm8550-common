@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2021 The LineageOS Project
+     Copyright (C) 2025 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,11 +16,26 @@
 -->
 <resources>
     <string-array name="doze_brightness_level">
-        <item>@string/doze_brightness_low</item>
-        <item>@string/doze_brightness_high</item>
-        <item>@string/doze_brightness_adaptive</item>
+        <item>@string/brightness_low</item>
+        <item>@string/brightness_medium</item>
+        <item>@string/brightness_high</item>
+        <item>@string/brightness_auto</item>
     </string-array>
+
     <string-array name="doze_brightness_level_mode">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="doze_schedule_type_entries">
+        <item>@string/schedule_always</item>
+        <item>@string/schedule_night_only</item>
+        <item>@string/schedule_custom</item>
+    </string-array>
+
+    <string-array name="doze_schedule_type_values">
         <item>0</item>
         <item>1</item>
         <item>2</item>
@@ -329,33 +344,33 @@
  
     <!-- CPU Governor Options (for all clusters) -->
     <string-array name="cpu_governor_entries">
-         <item>walt</item>
-         <item>conservative</item>
-         <item>powersave</item>
-         <item>performance</item>
-         <item>schedutil</item>
+        <item>walt</item>
+        <item>conservative</item>
+        <item>powersave</item>
+        <item>performance</item>
+        <item>schedutil</item>
     </string-array>
     <string-array name="cpu_governor_values">
-         <item>walt</item>
-         <item>conservative</item>
-         <item>powersave</item>
-         <item>performance</item>
-         <item>schedutil</item>
+        <item>walt</item>
+        <item>conservative</item>
+        <item>powersave</item>
+        <item>performance</item>
+        <item>schedutil</item>
     </string-array>
 
     <!-- Power Profile Modes -->
     <string-array name="power_profile_modes">
-         <item>Balanced</item>
-         <item>Gaming</item>
-         <item>Performance</item>
-         <item>Battery Saver</item>
-         <item>Unknown</item>
+        <item>Balanced</item>
+        <item>Gaming</item>
+        <item>Performance</item>
+        <item>Battery Saver</item>
+        <item>Unknown</item>
     </string-array>
     <string-array name="power_profile_mode_values" translatable="false">
-         <item>0</item>
-         <item>1</item>
-         <item>2</item>
-         <item>3</item>
-         <item>4</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
     </string-array>
 </resources>

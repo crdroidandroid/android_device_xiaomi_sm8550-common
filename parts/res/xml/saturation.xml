@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2018-2014 The LineageOS Project
+     Copyright (C) 2018-2025 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License"
      you may not use this file except in compliance with the License.
@@ -34,5 +34,6 @@
     <com.android.settingslib.widget.FooterPreference
         android:key="saturation_footer"  
         android:title="@string/saturation_footer_summary"
+        android:tint="?attr/colorControlNormal"
         android:selectable="false" /> 
 </PreferenceScreen>

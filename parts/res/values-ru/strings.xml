@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2020 The LineageOS Project
+     Copyright (C) 2025 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -25,6 +25,9 @@
     <string name="tile_already_added">Плитка уже добавлена</string>
     <string name="tile_on">Вкл</string>
     <string name="tile_off">Выкл</string>
+    <string name="menu_settings">Настройки</string>
+    <string name="menu_about">О нас</string>
+    <string name="menu_help">Помощь</string>
 
     <!-- Thermal Profiles -->
     <string name="thermal_title">Термальные профили</string>
@@ -59,21 +62,16 @@
     <string name="refresh_standard">60 Гц</string>
     <string name="refresh_extreme">120 Гц</string>
 
-    <!-- Doze Strings -->
-    <string name="doze_brightness_low">Низкая яркость</string>
-    <string name="doze_brightness_high">Высокая яркость</string>
-    <string name="doze_brightness_adaptive">Адаптивная яркость</string>
-    <string name="doze_brightness_title">Уровень яркости Doze</string>
-    <string name="doze_brightness_summary">Уровень яркости экрана в режиме Doze (% от максимальной яркости)</string>
-
     <!-- Clear Speaker -->
-   <string name="clear_speaker_title">Очистка динамика</string>
-    <string name="clear_speaker_summary">Воспроизвести 30-секундный звук для очистки динамика</string>
-    <string name="clear_speaker_description">Используйте эту функцию 1-2 раза, если динамик слегка забит пылью. Установите громкость на максимум.\n\nЕсли динамик сильно забит, запустите функцию 2-5 раз, встряхивая устройство динамиком вниз.</string>
+    <string name="clear_speaker_title">Очистка динамика</string>
+    <string name="clear_speaker_summary">Удаление воды и пыли из динамика</string>
+    <string name="clear_speaker_description">Функция воспроизводит специальный звук для удаления воды и пыли из динамика. Рекомендуется использовать после попадания жидкости.</string>
+    <string name="clear_speaker_warning_title">Внимание</string>
+    <string name="clear_speaker_warning_summary">Не используйте функцию при наличии повреждений динамика. Убедитесь, что громкость не установлена на максимум.</string>
 
     <!-- Saturation -->
     <string name="saturation_title">Насыщенность экрана</string>
-    <string name="saturation_summary">Управление уровнем насыщенности дисплея</string>
+    <string name="saturation_settings">Настройки HBM</string>
     <string name="saturation_footer_summary">Изменение цветового режима в настройках дисплея переопределит уровень насыщенности, и его нужно будет применить заново.</string>
 
     <!-- Custom seekbar -->
@@ -88,35 +86,45 @@
     <string name="image_preview_previous_page_content_description">Предыдущая</string>
 
     <!-- Auto hbm -->
-    <string name="auto_hbm_title">Автоматический режим высокой яркости (HBM)</string>
-    <string name="auto_hbm_main_switch_title">Использовать автоматический HBM</string>
-    <string name="tile_auto_hbm">Авто HBM</string>
-    <string name="tile_hbm_on">Включено</string>
-    <string name="tile_hbm_off">Выключено</string>
-    <string name="tile_hbm">HBM</string>
-    <string name="tile_hbm_unavailable">HBM недоступен</string>
-    <string name="tile_auto_hbm_or_brightness_enabled">Авто HBM или автояркость включены</string>
-    <string name="hbm_mode_title">Режим высокой яркости</string>
-    <string name="hbm_mode_notification">Режим высокой яркости активирован. Длительное использование может повредить дисплей.</string>
-    <string name="auto_hbm_summary">Автоматически включать режим высокой яркости в зависимости от интенсивности света (люкс)</string>
-    <string name="auto_hbm_threshold_title">Порог освещенности</string>
-    <string name="auto_hbm_threshold_summary">Определите порог интенсивности света (в люксах), при котором активируется HBM</string>
-    <string name="auto_hbm_enable_time_title">Время активации</string>
-    <string name="auto_hbm_enable_time_summary">Длительность (в секундах), в течение которой порог освещенности должен быть достигнут для активации HBM</string>
-    <string name="auto_hbm_disable_time_title">Время отключения</string>
-    <string name="auto_hbm_disable_time_summary">Длительность (в секундах), в течение которой HBM отключается, если освещенность падает ниже заданного уровня</string>
-
-    <!-- GameBar Overlay -->
-    <string name="game_bar_title">GameBar</string>
-    <string name="game_bar_summary">Включить системный оверлей (FPS, Temp и т. д.)</string>
-    <string name="overlay_permission_required">Требуется разрешение на наложение</string>
-    <string name="overlay_permission_granted">Разрешение на наложение предоставлено</string>
-    <string name="overlay_permission_denied">Разрешение на наложение отклонено</string>
-    <string name="game_bar_tile_label">GameBar</string>
-    <string name="game_bar_tile_description">Включить/выключить игровой оверлей</string>
+    <string name="auto_hbm_title">Автоматический HBM</string>
+    <string name="auto_hbm_summary">Автоматически включает высокую яркость при сильном освещении</string>
+    <string name="auto_hbm_main_switch_title">Автоматический HBM</string>
+    <string name="auto_hbm_main_switch_summary">Включить/выключить автоматическую регулировку</string>
+    <string name="current_lux_title">Текущая освещенность</string>
+    <string name="current_lux_summary">Уровень окружающего света</string>
+    <string name="current_lux_value">{0} lux</string>
+    <string name="recommended_lux_range">Рекомендуется: 20,000-40,000 lux</string>
+    <string name="lux_units">lux</string>
+    <string name="seconds_units">сек</string>
+    <string name="settings_category_title">Настройки HBM</string>
+    <string name="auto_hbm_threshold_title">Порог активации</string>
+    <string name="auto_hbm_threshold_summary">Уровень освещенности для включения HBM</string>
+    <string name="auto_hbm_enable_time_title">Задержка включения</string>
+    <string name="auto_hbm_enable_time_summary">Время до активации HBM</string>
+    <string name="auto_hbm_disable_time_title">Задержка выключения</string>
+    <string name="auto_hbm_disable_time_summary">Время до отключения HBM</string>
+    <string name="battery_impact_title">Влияние на батарею</string>
+    <string name="battery_impact_summary">HBM может увеличить расход батареи</string>
+    <string name="recommendations_title">Рекомендации</string>
+    <string name="recommendations_summary">Используйте средние значения для баланса между видимостью и энергопотреблением</string>
+    <string name="tile_add_title">Добавить плитку</string>
+    <string name="tile_refresh_title">Обновить</string>
+    <string name="menu_settings_title">Настройки</string>
+    <string name="menu_about_title">О приложении</string>
+    <string name="menu_help_title">Помощь</string>
+    <string name="tile_hbm">Плитка HBM</string>
+    <string name="autohbm_menu">Автоматическое меню HBM</string>
+    <string name="tile_auto_hbm">Автоматический HBM</string>
+    <string name="tile_hbm_on">Включен HBM</string>
+    <string name="tile_hbm_off">Выключен HBM</string>
+    <string name="hbm_mode_title">Режим HBM</string>
+    <string name="hbm_mode_notification">Активен режим высокой яркости</string>
+    <string name="tile_auto_hbm_or_brightness_enabled">Автоматический HBM/яркость</string>
+    <string name="refresh_tiles">Обновить плитки</string>
     
     <!-- Power Profile Strings -->
     <string name="powerprofile_tile_label">Профиль питания</string>
+    <string name="configure_gpu">Настроить частоту графического процессора</string>
     <string name="powerprofile_mode_balance">Сбалансированный</string>
     <string name="powerprofile_mode_performance">Производительность</string>
     <string name="powerprofile_mode_battery_saver">Экономия заряда батареи</string>
@@ -128,10 +136,135 @@
     <string name="power_profile_footer_summary">Примечание: более высокие частоты (например, графический процессор более 900 МГц и более высокая тактовая частота основного ядра) доступны только в режиме Game Boost.</string>
 
     <!-- Powertools Main Title -->
-    <string name="Powertools_title">Powertools</string>
+    <string name="Powertools_title">Профили питания</string>
     <string name="Powertools_summary">Настройте профили питания, частоты ЦП/ГП и параметры регулятора для оптимизации производительности и эффективности</string>
+    <string name="power_profile_mode_title">Режим мощности</string>
 
     <!-- GPU Strings -->
+    <string name="gpu_optimizer_title">Оптимизатор графического процессора</string>
+    <string name="gpu_optimizer_summary">Включить настройку производительности графического процессора</string>
     <string name="gpu_min_frequency">Минимальная частота графического процессора</string>
     <string name="gpu_max_frequency">Максимальная частота графического процессора</string>  
+    <string name="cpu_optimizer_title">Оптимизатор ЦП</string>
+    <string name="cpu_optimizer_summary">Включить настройку производительности ЦП</string>
+    <string name="cpu_little_cluster_title">Малый кластер</string>
+    <string name="cpu_big_cluster_title">Большой кластер</string>
+    <string name="cpu_prime_cluster_title">Основной кластер</string>
+    <string name="min_frequency_title">Мин.частота</string>
+    <string name="max_frequency_title">Макс.частота</string>
+    <string name="governor_title">Говерновер</string>
+
+    <!-- GameBar Overlay -->
+    <string name="game_bar_title">GameBar</string>
+    <string name="game_bar_summary">Включить системный оверлей (FPS, Temp и т. д.)</string>
+    <string name="overlay_permission_required">Требуется разрешение на наложение</string>
+    <string name="overlay_permission_granted">Разрешение на наложение предоставлено</string>
+    <string name="overlay_permission_denied">Разрешение на наложение отклонено</string>
+    <string name="game_bar_tile_label">GameBar</string>
+    <string name="game_bar_tile_description">Включить/выключить игровой оверлей</string>
+    <string name="game_bar_enable_title">Включить игровую панель</string>
+    <string name="overlay_features_title">Функции наложения</string>
+
+    <!-- Game Bar -->
+    <string name="fps_overlay_title">FPS (частота кадров)</string>
+    <string name="fps_overlay_summary">Отображать текущую частоту кадров</string>
+    <string name="device_temp_title">Температура устройства</string>
+    <string name="device_temp_summary">Отображать температуру батареи</string>
+    <string name="cpu_metrics_title">Показатели процессора</string>
+    <string name="cpu_usage_title">Загрузка CPU</string>
+    <string name="cpu_usage_summary">Процент использования процессора</string>
+    <string name="cpu_clock_title">Частоты CPU</string>
+    <string name="cpu_clock_summary">Текущие частоты ядер процессора</string>
+    <string name="cpu_temp_title">Температура CPU</string>
+    <string name="cpu_temp_summary">Температура процессора (thermal_zone0)</string>
+    <string name="gpu_metrics_title">Показатели видеокарты</string>
+    <string name="gpu_usage_title">Загрузка GPU</string>
+    <string name="gpu_usage_summary">Процент использования видеокарты</string>
+    <string name="gpu_clock_title">Частота GPU</string>
+    <string name="gpu_clock_summary">Текущая частота видеокарты</string>
+    <string name="gpu_temp_title">Температура GPU</string>
+    <string name="gpu_temp_summary">Температура видеокарты</string>
+    <string name="ram_usage_title">Использование RAM</string>
+    <string name="ram_usage_summary">Текущее использование оперативной памяти</string>
+    <string name="fps_settings_title">Настройки FPS</string>
+    <string name="fps_method_title">Метод измерения FPS</string>
+    <string name="fps_method_summary">Выбор между новым API и legacy-методом</string>
+    <string name="customization_title">Внешний вид оверлея</string>
+    <string name="text_size_title">Размер текста</string>
+    <string name="text_size_summary">Размер текста в оверлее</string>
+    <string name="background_alpha_title">Прозрачность фона</string>
+    <string name="background_alpha_summary">Непрозрачность фона оверлея</string>
+    <string name="corner_radius_title">Скругление углов</string>
+    <string name="corner_radius_summary">Радиус скругления углов</string>
+    <string name="padding_title">Внутренние отступы</string>
+    <string name="padding_summary">Отступы внутри оверлея</string>
+    <string name="item_spacing_title">Расстояние между строками</string>
+    <string name="item_spacing_summary">Пространство между элементами</string>
+    <string name="title_color_title">Цвет заголовков</string>
+    <string name="title_color_summary">Цвет текста \"FPS\", \"Temp\" и т.д.</string>
+    <string name="value_color_title">Цвет значений</string>
+    <string name="value_color_summary">Цвет числовых значений</string>
+    <string name="position_title">Положение на экране</string>
+    <string name="position_summary">Расположение оверлея</string>
+    <string name="format_title">Формат отображения</string>
+    <string name="format_summary">Полный или компактный режим</string>
+    <string name="update_interval_title">Интервал обновления</string>
+    <string name="update_interval_summary">Частота обновления показателей</string>
+    <string name="split_config_title">Разделение статистики</string>
+    <string name="split_mode_title">Режим разделения</string>
+    <string name="split_mode_summary">Расположение блоков статистики</string>
+    <string name="gesture_controls_title">Управление жестами</string>
+    <string name="single_tap_title">Одиночное нажатие</string>
+    <string name="single_tap_summary">Переключение между форматами</string>
+    <string name="double_tap_title">Двойное нажатие</string>
+    <string name="double_tap_summary">Начать/остановить запись логов</string>
+    <string name="long_press_title">Долгое нажатие</string>
+    <string name="long_press_summary">Открыть настройки GameBar</string>
+    <string name="long_press_timeout_title">Длительность нажатия</string>
+    <string name="long_press_timeout_summary">Время для распознания долгого нажатия</string>
+    <string name="capture_logs_title">Запись статистики</string>
+    <string name="start_logging_title">Начать запись</string>
+    <string name="start_logging_summary">Запустить запись статистики в реальном времени</string>
+    <string name="stop_logging_title">Остановить запись</string>
+    <string name="stop_logging_summary">Прекратить запись статистики</string>
+    <string name="export_logs_title">Экспорт данных</string>
+    <string name="export_logs_summary">Сохранить записанные данные в файл</string>
+    <string name="auto_enable_title">Автовключение</string>
+    <string name="auto_enable_switch_title">Автовключение для приложений</string>
+    <string name="auto_enable_switch_summary">Автоматически включать GameBar для выбранных приложений</string>
+    <string name="select_apps_title">Выбрать приложения</string>
+    <string name="select_apps_summary">Добавить приложения для автовключения</string>
+    <string name="remove_apps_title">Удалить приложения</string>
+    <string name="remove_apps_summary">Убрать приложения из списка автовключения</string>
+
+    <!-- Doze Strings -->
+    <string name="ambient_display_title">Экран в режиме ожидания</string>
+    <string name="ambient_display_enable_title">Включить Ambient Display</string>
+    <string name="ambient_display_always_on_title">Always-on Display</string>
+    <string name="ambient_display_always_on_summary">Постоянно показывать информацию на выключенном экране</string>
+    <string name="doze_brightness_title">Яркость AOD</string>
+    <string name="doze_brightness_summary">Уровень яркости для Always-on Display</string>
+    <string name="aod_category_title">Always-on Display</string>
+    <string name="gestures_category_title">Жесты активации</string>
+    <string name="advanced_settings_title">Дополнительные настройки</string>
+    <string name="info_category_title">Информация</string>
+    <string name="doze_pulse_on_pick_up_title">При поднятии телефона</string>
+    <string name="doze_pulse_on_pick_up_summary">Показывать уведомления при поднятии устройства</string>
+    <string name="doze_pulse_on_notification_title">При новых уведомлениях</string>
+    <string name="doze_pulse_on_notification_summary">Показывать уведомления при получении</string>
+    <string name="doze_pulse_on_double_tap_title">При двойном касании</string>
+    <string name="doze_pulse_on_double_tap_summary">Активировать по двойному касанию экрана</string>
+    <string name="doze_schedule_type_title">Расписание работы</string>
+    <string name="doze_schedule_type_summary">Настроить время работы Ambient Display</string>
+    <string name="doze_time_from_title">Время начала</string>
+    <string name="doze_time_to_title">Время окончания</string>
+    <string name="compatibility_info_title">Совместимость</string>
+    <string name="compatibility_info_summary">Доступность функций зависит от устройства</string>
+    <string name="brightness_low">Низкая</string>
+    <string name="brightness_medium">Средняя</string>
+    <string name="brightness_high">Высокая</string>
+    <string name="brightness_auto">Авто</string>
+    <string name="schedule_always">Всегда</string>
+    <string name="schedule_night_only">Только ночью</string>
+    <string name="schedule_custom">По расписанию</string>
 </resources>

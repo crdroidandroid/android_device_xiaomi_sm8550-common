@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 Paranoid Android
+ * Copyright (C) 2025 Paranoid Android
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,18 +17,21 @@
 package org.lineageos.settings.speaker;
 
 import android.os.Bundle;
-
+import android.preference.Preference;
+import android.preference.PreferenceFragment;
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 
 public class ClearSpeakerActivity extends CollapsingToolbarBaseActivity {
 
-    private static final String TAG_CLEARSPEAKER = "clearspeaker";
+    private static final String TAG_CLEARSPEAKER = "ClearSpeaker";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        getFragmentManager().beginTransaction().replace(com.android.settingslib.collapsingtoolbar.R.id.content_frame,
-                new ClearSpeakerFragment(), TAG_CLEARSPEAKER).commit();
+        
+        getSupportFragmentManager().beginTransaction()
+                .replace(com.android.settingslib.collapsingtoolbar.R.id.content_frame,
+                        new ClearSpeakerFragment(), TAG_CLEARSPEAKER)
+                .commit();
     }
 }

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) 2025 The LineageOS Project
  *
@@ -18,8 +17,11 @@
 package org.lineageos.settings.autohbm;
 
 import android.os.Bundle;
-
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
+import org.lineageos.settings.R;
 
 public class AutoHbmActivity extends CollapsingToolbarBaseActivity {
 
@@ -28,8 +30,11 @@ public class AutoHbmActivity extends CollapsingToolbarBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_autohbm);
 
-        getSupportFragmentManager().beginTransaction().replace(com.android.settingslib.collapsingtoolbar.R.id.content_frame,
-                new AutoHbmFragment(), TAG).commit();
+        getSupportFragmentManager().beginTransaction()
+                .replace(com.android.settingslib.collapsingtoolbar.R.id.content_frame,
+                        new AutoHbmFragment(), TAG)
+                .commit();
     }
 }

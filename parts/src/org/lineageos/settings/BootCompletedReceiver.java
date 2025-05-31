@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2015 The CyanogenMod Project
- *               2017-2019 The LineageOS Project
+ *               2017-2025 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,6 +82,12 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         ThermalUtils.getInstance(context).startService();
         context.startServiceAsUser(new Intent(context, ThermalTileService.class), UserHandle.CURRENT);
 
+        // Start Refresh Rate Service
+        RefreshUtils.startService(context);
+
+        // Start Pocket Mode Service
+        PocketService.startService(context);
+
         // Start Power Profile Tile Service
         context.startServiceAsUser(new Intent(context, PowerProfileTileService.class), UserHandle.CURRENT);
     }
@@ -103,4 +109,3 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         }
     }
 }
-
