@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 The LineageOS Project
+ * Copyright (C) 2025 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,9 @@
 package org.lineageos.settings.saturation
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import org.lineageos.settings.R
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity
 
 class SaturationActivity : CollapsingToolbarBaseActivity() {
@@ -33,4 +36,3 @@ class SaturationActivity : CollapsingToolbarBaseActivity() {
         ).commit()
     }
 }
-

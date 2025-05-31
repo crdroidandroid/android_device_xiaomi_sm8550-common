@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2018-2022 crDroid Android Project
+     Copyright (C) 2018-2025 crDroid Android Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
@@ -12,6 +12,11 @@
         <attr name="showSign" format="boolean" />
         <attr name="units" format="string|reference" />
         <attr name="continuousUpdates" format="boolean" />
+        <attr name="showMaterialSwitchColors" format="boolean"/>
+        <attr name="bottomTitle" format="string"/>
+        <attr name="progress" format="integer"/>
+        <attr name="total" format="integer"/>
+        <attr name="usageTitle" format="string"/>
     </declare-styleable>
 
 </resources>

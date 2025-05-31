@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2024 Paranoid Android
+     Copyright (C) 2025 Paranoid Android
      SPDX-License-Identifier: Apache-2.0
 -->
 <PreferenceScreen
@@ -10,6 +10,7 @@
     <com.android.settingslib.widget.MainSwitchPreference
         android:defaultValue="false"
         android:key="thermal_enable"
-        android:title="@string/thermal_enable" />
-
+        android:title="@string/thermal_enable"
+        android:icon="@drawable/ic_thermal_control"
+        android:tint="?attr/colorControlNormal" />
 </PreferenceScreen>

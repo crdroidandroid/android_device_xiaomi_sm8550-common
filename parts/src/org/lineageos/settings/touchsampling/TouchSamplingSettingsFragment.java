@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2024 The LineageOS Project
+ * Copyright (C) 2018-2025 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ import android.view.MenuItem;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceFragment;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import org.lineageos.settings.R;
 import org.lineageos.settings.touchsampling.TouchSamplingUtils;
@@ -40,14 +40,14 @@ public class TouchSamplingSettingsFragment extends PreferenceFragment implements
     public static final String SHAREDHTSR = "SHAREDHTSR";
     public static final String HTSR_STATE = "htsr_state";
 
-    private SwitchPreference mHTSRPreference;
+    private SwitchPreferenceCompat mHTSRPreference;
     private SharedPreferences mPrefs;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.htsr_settings);
         getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
-        mHTSRPreference = (SwitchPreference) findPreference(HTSR_ENABLE_KEY);
+        mHTSRPreference = (SwitchPreferenceCompat) findPreference(HTSR_ENABLE_KEY);
         mPrefs = getActivity().getSharedPreferences(SHAREDHTSR, Context.MODE_PRIVATE);
 
         // Set the initial state of the switch

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2020 The LineageOS Project
+     Copyright (C) 2025 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-
     <!-- Xiaomi Settings -->
     <string name="app_title">Xiaomi Settings</string>
     <string name="tile_add">Add tile</string>
@@ -25,6 +24,9 @@
     <string name="tile_already_added">Tile already added</string>
     <string name="tile_on">On</string>
     <string name="tile_off">Off</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_about">About</string>
+    <string name="menu_help">Help</string>
 
     <!-- Thermal Profiles -->
     <string name="thermal_title">Thermal profiles</string>
@@ -59,21 +61,16 @@
     <string name="refresh_standard">60Hz</string>
     <string name="refresh_extreme">120Hz</string>
 
-    <!-- Doze Strings -->
-    <string name="doze_brightness_low">Low brightness</string>
-    <string name="doze_brightness_high">High brightness</string>
-    <string name="doze_brightness_adaptive">Adaptive brightness</string>
-    <string name="doze_brightness_title">Doze brightness level</string>
-    <string name="doze_brightness_summary">Brightness level of doze pulse screen (% of max allowed brightness)</string>
-
-    <!-- Clear Speaker -->
-   <string name="clear_speaker_title">Clear speaker</string>
-   <string name="clear_speaker_summary">Play a 30-second audio to clear the speaker</string>
-   <string name="clear_speaker_description">Run this feature once or twice if you find that your speaker is lightly blocked by dust. Set media volume to maximum.\n\nIf the speaker is blocked heavily, run this feature 2-5 times while shaking your device with the speaker facing downwards.</string>
+    <!-- Clear -->
+    <string name="clear_speaker_title">Speaker cleaning</string>
+    <string name="clear_speaker_summary">Remove water and dust from speaker</string>
+    <string name="clear_speaker_description">Plays special sound to remove water and dust from speaker. Recommended after liquid exposure.</string>
+    <string name="clear_speaker_warning_title">Warning</string>
+    <string name="clear_speaker_warning_summary">Do not use this feature if your speaker is damaged. Make sure the volume is not set to maximum.</string>
 
     <!-- Saturation -->
     <string name="saturation_title">Display Saturation</string>
-    <string name="saturation_summary">Control the saturation level of the display</string>
+    <string name="saturation_settings">Settings HBM</string>
     <string name="saturation_footer_summary">Changing the color mode in display settings will override the saturation level, requiring it to be reapplied.</string>
 
     <!-- Custom seekbar -->
@@ -88,35 +85,45 @@
     <string name="image_preview_previous_page_content_description">Previous</string>
 
     <!-- Auto hbm -->
-    <string name="auto_hbm_title">Automatic High Brightness Mode (HBM)</string>
-    <string name="auto_hbm_main_switch_title">Use automatic HBM</string>
+    <string name="auto_hbm_title">Auto HBM</string>
+    <string name="auto_hbm_summary">Automatically enable high brightness in strong light</string>
+    <string name="auto_hbm_main_switch_title">Auto HBM</string>
+    <string name="auto_hbm_main_switch_summary">Turn on/off automatic adjustment</string>
+    <string name="current_lux_title">Current ambient light</string>
+    <string name="current_lux_summary">Ambient light level</string>
+    <string name="current_lux_value">{0} lux</string>
+    <string name="recommended_lux_range">Recommended: 20,000-40,000 lux</string>
+    <string name="lux_units">lux</string>
+    <string name="seconds_units">sec</string>
+    <string name="settings_category_title">HBM settings</string>
+    <string name="auto_hbm_threshold_title">Activation threshold</string>
+    <string name="auto_hbm_threshold_summary">Light level to activate HBM</string>
+    <string name="auto_hbm_enable_time_title">On delay</string>
+    <string name="auto_hbm_enable_time_summary">Time before HBM activates</string>
+    <string name="auto_hbm_disable_time_title">Off delay</string>
+    <string name="auto_hbm_disable_time_summary">Time before HBM disables</string>
+    <string name="battery_impact_title">Battery Impact</string>
+    <string name="battery_impact_summary">HBM May Increase Battery Drain</string>
+    <string name="recommendations_title">Recommendations</string>
+    <string name="recommendations_summary">Use the average to balance visibility and power consumption</string>
+    <string name="tile_add_title">Add tile</string>
+    <string name="tile_refresh_title">Refresh</string>
+    <string name="menu_settings_title">Settings</string>
+    <string name="menu_about_title">About the app</string>
+    <string name="menu_help_title">Help</string>
+    <string name="tile_hbm">HBM Tile</string>
+    <string name="autohbm_menu">Auto HBM Menu</string>
     <string name="tile_auto_hbm">Auto HBM</string>
-    <string name="tile_hbm_on">Enabled</string>
-    <string name="tile_hbm_off">Disabled</string>
-    <string name="tile_hbm">HBM</string>
-    <string name="tile_hbm_unavailable">HBM Unavailable</string>
-    <string name="tile_auto_hbm_or_brightness_enabled">Auto HBM or Auto Brightness is enabled</string>
-    <string name="hbm_mode_title">High Brightness Mode</string>
-    <string name="hbm_mode_notification">High Brightness Mode is now activated. Long time usage may damage your display.</string>
-    <string name="auto_hbm_summary">Automatically enable high brightness mode based on sunlight intensity (lux)</string>
-    <string name="auto_hbm_threshold_title">Light threshold</string>
-    <string name="auto_hbm_threshold_summary">Define the light intensity threshold in lux units at which HBM is activated</string>
-    <string name="auto_hbm_enable_time_title">Enable time</string>
-    <string name="auto_hbm_enable_time_summary">Duration in seconds that the light threshold must be continuously met to activate HBM</string>
-    <string name="auto_hbm_disable_time_title">Disable time</string>
-    <string name="auto_hbm_disable_time_summary">Duration in seconds for which HBM is deactivated if the light threshold falls below the set level</string>
-
-    <!-- GameBar Overlay -->
-    <string name="game_bar_title">GameBar</string>
-    <string name="game_bar_summary">Enable the system overlay (FPS, Temp, etc.)</string>
-    <string name="overlay_permission_required">Overlay permission is required</string>
-    <string name="overlay_permission_granted">Overlay permission granted</string>
-    <string name="overlay_permission_denied">Overlay permission denied</string>
-    <string name="game_bar_tile_label">GameBar</string>
-    <string name="game_bar_tile_description">Toggle the game overlay</string>
+    <string name="tile_hbm_on">HBM On</string>
+    <string name="tile_hbm_off">HBM Off</string>
+    <string name="hbm_mode_title">HBM Mode</string>
+    <string name="hbm_mode_notification">High brightness mode active</string>
+    <string name="tile_auto_hbm_or_brightness_enabled">Auto HBM/Brightness</string>
+    <string name="refresh_tiles">Refresh Tiles</string>
     
-    <!-- Power Profile Strings -->
+    <!-- Power Profile -->
     <string name="powerprofile_tile_label">Power Profile</string>
+    <string name="configure_gpu">Configure GPU Frequency</string>
     <string name="powerprofile_mode_balance">Balanced</string>
     <string name="powerprofile_mode_performance">Performance</string>
     <string name="powerprofile_mode_battery_saver">Battery Saver</string>
@@ -130,14 +137,139 @@
     <!-- Powertools Main Title -->
     <string name="Powertools_title">Powertools</string>
     <string name="Powertools_summary">Customize power profiles, CPU/GPU frequencies, and governor settings for optimized performance and efficiency</string>
+    <string name="power_profile_mode_title">Power Mode</string>
 
-    <!-- GPU Strings -->
+    <!-- GPU -->
+    <string name="gpu_optimizer_title">GPU Optimizer</string>
+    <string name="gpu_optimizer_summary">Enable GPU performance tuning</string>
     <string name="gpu_min_frequency">GPU Minimum Frequency</string>
     <string name="gpu_max_frequency">GPU Maximum Frequency</string>
+    <string name="cpu_optimizer_title">CPU Optimizer</string>
+    <string name="cpu_optimizer_summary">Enable CPU performance tuning</string>
+    <string name="cpu_little_cluster_title">Little Cluster</string>
+    <string name="cpu_big_cluster_title">Big Cluster</string>
+    <string name="cpu_prime_cluster_title">Prime Cluster</string>
+    <string name="min_frequency_title">Min Frequency</string>
+    <string name="max_frequency_title">Max Frequency</string>
+    <string name="governor_title">Governor</string>
 
     <!-- High Touch Polling -->
     <string name="htsr_title">Touch Responsiveness</string>
     <string name="htsr_enable_title">Increase Touch Responsiveness</string>
     <string name="htsr_enable_summary">Increases touch polling rate to decrease latency</string>
-    <string name="touch_sampling_tile_label">Touch Boost</string>
+    <string name="htsr_warning_summary">Higher rates may impact battery life</string>
+
+    <!-- GameBar Overlay -->
+    <string name="game_bar_title">GameBar</string>
+    <string name="game_bar_summary">Enable the system overlay (FPS, Temp, etc.)</string>
+    <string name="overlay_permission_required">Overlay permission is required</string>
+    <string name="overlay_permission_granted">Overlay permission granted</string>
+    <string name="overlay_permission_denied">Overlay permission denied</string>
+    <string name="game_bar_tile_label">GameBar</string>
+    <string name="game_bar_tile_description">Toggle the game overlay</string>
+    <string name="game_bar_enable_title">Enable Game Bar</string>
+    <string name="overlay_features_title">Overlay Features</string>
+
+    <!-- Game Bar -->
+    <string name="fps_overlay_title">FPS Overlay</string>
+    <string name="fps_overlay_summary">Display current frame rate</string>
+    <string name="device_temp_title">Device Temperature</string>
+    <string name="device_temp_summary">Show battery temperature</string>
+    <string name="cpu_metrics_title">CPU Metrics</string>
+    <string name="cpu_usage_title">CPU Usage</string>
+    <string name="cpu_usage_summary">Processor utilization percentage</string>
+    <string name="cpu_clock_title">CPU Clocks</string>
+    <string name="cpu_clock_summary">Current processor core frequencies</string>
+    <string name="cpu_temp_title">CPU Temperature</string>
+    <string name="cpu_temp_summary">Processor temperature (thermal_zone0)</string>
+    <string name="gpu_metrics_title">GPU Metrics</string>
+    <string name="gpu_usage_title">GPU Usage</string>
+    <string name="gpu_usage_summary">Graphics processor utilization percentage</string>
+    <string name="gpu_clock_title">GPU Clock</string>
+    <string name="gpu_clock_summary">Current graphics processor frequency</string>
+    <string name="gpu_temp_title">GPU Temperature</string>
+    <string name="gpu_temp_summary">Graphics processor temperature</string>
+    <string name="ram_usage_title">RAM Usage</string>
+    <string name="ram_usage_summary">Current memory utilization</string>
+    <string name="fps_settings_title">FPS Settings</string>
+    <string name="fps_method_title">FPS Measurement Method</string>
+    <string name="fps_method_summary">Choose between new API and legacy method</string>
+    <string name="customization_title">Overlay Appearance</string>
+    <string name="text_size_title">Text Size</string>
+    <string name="text_size_summary">Overlay text size</string>
+    <string name="background_alpha_title">Background Opacity</string>
+    <string name="background_alpha_summary">Overlay background transparency</string>
+    <string name="corner_radius_title">Corner Radius</string>
+    <string name="corner_radius_summary">Rounded corner radius</string>
+    <string name="padding_title">Padding</string>
+    <string name="padding_summary">Internal overlay padding</string>
+    <string name="item_spacing_title">Item Spacing</string>
+    <string name="item_spacing_summary">Space between elements</string>
+    <string name="title_color_title">Title Color</string>
+    <string name="title_color_summary">Color for \"FPS\", \"Temp\" etc.</string>
+    <string name="value_color_title">Value Color</string>
+    <string name="value_color_summary">Color for numerical values</string>
+    <string name="position_title">Screen Position</string>
+    <string name="position_summary">Overlay placement</string>
+    <string name="format_title">Display Format</string>
+    <string name="format_summary">Compact or full display mode</string>
+    <string name="update_interval_title">Update Interval</string>
+    <string name="update_interval_summary">Metrics refresh rate</string>
+    <string name="split_config_title">Metrics Layout</string>
+    <string name="split_mode_title">Layout Mode</string>
+    <string name="split_mode_summary">Metrics block arrangement</string>
+    <string name="gesture_controls_title">Gesture Controls</string>
+    <string name="single_tap_title">Single Tap</string>
+    <string name="single_tap_summary">Toggle display formats</string>
+    <string name="double_tap_title">Double Tap</string>
+    <string name="double_tap_summary">Start/stop logging</string>
+    <string name="long_press_title">Long Press</string>
+    <string name="long_press_summary">Open GameBar settings</string>
+    <string name="long_press_timeout_title">Long Press Duration</string>
+    <string name="long_press_timeout_summary">Long press recognition time</string>
+    <string name="capture_logs_title">Performance Logging</string>
+    <string name="start_logging_title">Start Logging</string>
+    <string name="start_logging_summary">Begin real-time metrics recording</string>
+    <string name="stop_logging_title">Stop Logging</string>
+    <string name="stop_logging_summary">End metrics recording</string>
+    <string name="export_logs_title">Export Data</string>
+    <string name="export_logs_summary">Save recorded data to file</string>
+    <string name="auto_enable_title">Auto-Enable</string>
+    <string name="auto_enable_switch_title">Auto-Enable for Apps</string>
+    <string name="auto_enable_switch_summary">Automatically enable GameBar for selected apps</string>
+    <string name="select_apps_title">Select Applications</string>
+    <string name="select_apps_summary">Add applications to auto-enable list</string>
+    <string name="remove_apps_title">Remove Applications</string>
+    <string name="remove_apps_summary">Remove applications from auto-enable list</string>
+
+    <!-- Doze -->
+    <string name="ambient_display_title">Standby display</string>
+    <string name="ambient_display_enable_title">Enable Ambient Display</string>
+    <string name="ambient_display_always_on_title">Always-on Display</string>
+    <string name="ambient_display_always_on_summary">Always show information on screen off</string>
+    <string name="doze_brightness_title">AOD brightness</string>
+    <string name="doze_brightness_summary">Brightness level for Always-on Display</string>
+    <string name="aod_category_title">Always-on Display</string>
+    <string name="gestures_category_title">Activation gestures</string>
+    <string name="advanced_settings_title">Advanced settings</string>
+    <string name="info_category_title">Information</string>
+    <string name="doze_pulse_on_pick_up_title">When phone is picked up</string>
+    <string name="doze_pulse_on_pick_up_summary">Show notifications when device is picked up</string>
+    <string name="doze_pulse_on_notification_title">When new notifications</string>
+    <string name="doze_pulse_on_notification_summary">Show notifications when received</string>
+    <string name="doze_pulse_on_double_tap_title">When double tapped</string>
+    <string name="doze_pulse_on_double_tap_summary">Activate when screen is double tapped</string>
+    <string name="doze_schedule_type_title">Work schedule</string>
+    <string name="doze_schedule_type_summary">Adjust Ambient Display runtime</string>
+    <string name="doze_time_from_title">Start time</string>
+    <string name="doze_time_to_title">End time</string>
+    <string name="compatibility_info_title">Compatibility</string>
+    <string name="compatibility_info_summary">Feature availability may vary by device</string>
+    <string name="brightness_low">Low</string> 
+    <string name="brightness_medium">Medium</string> 
+    <string name="brightness_high">High</string> 
+    <string name="brightness_auto">Auto</string> 
+    <string name="schedule_always">Always</string> 
+    <string name="schedule_night_only">Night only</string> 
+    <string name="schedule_custom">Scheduled</string>
 </resources>
