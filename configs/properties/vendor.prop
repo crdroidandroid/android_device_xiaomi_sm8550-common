@@ -169,27 +169,29 @@ persist.vendor.qcom.bluetooth.aptxadaptiver2_1_support=true
 persist.sys.fflag.override.settings_bluetooth_hearing_aid=true
 bluetooth.profile.bap.broadcast.assist.enabled=false
 bluetooth.profile.bap.broadcast.source.enabled=false
-bluetooth.profile.bap.unicast.client.enabled=false
-bluetooth.profile.vcp.controller.enabled=false
+bluetooth.profile.bap.unicast.client.enabled=true
+bluetooth.profile.vcp.controller.enabled=true
 bluetooth.profile.csip.set_coordinator.enabled=false
 bluetooth.profile.mcp.server.enabled=true
 bluetooth.profile.ccp.server.enabled=true
 
 # Camera
 camera.disable_zsl_mode=true
+ro.camerax.extensions.enabled=true
 persist.sys.miui.camera.version=3.0
 ro.hardware.camera=xiaomi
 af.fast_track_multiplier=1
 ro.camera.enableCamera1MaxZsl=1
 vendor.camera.aux.packagelist=com.android.camera,org.lineageos.aperture,org.lineageos.aperture.dev
 
-# Dalvik
+# MEMORY MANAGEMENT
 dalvik.vm.heapstartsize=16m
 dalvik.vm.heapgrowthlimit=256m
 dalvik.vm.heapsize=512m
 dalvik.vm.heaptargetutilization=0.5
 dalvik.vm.heapminfree=8m
 dalvik.vm.heapmaxfree=32m
+ro.af.client_heap_size_kbyte=7168
 persist.sys.dalvik.vm.lib.2=libart.so
 
 # Display
@@ -198,7 +200,7 @@ vendor.display.disable_excl_rect=0
 vendor.display.disable_excl_rect_partial_fb=1
 vendor.display.comp_mask=0
 vendor.display.enable_optimize_refresh=0
-vendor.display.use_smooth_motion=0
+vendor.display.use_smooth_motion=1
 vendor.display.disable_stc_dimming=1
 vendor.display.enable_dpps_dynamic_fps=1
 vendor.display.vds_allow_hwc=1
@@ -255,12 +257,13 @@ debug.sf.hw=0
 debug.egl.hw=0
 debug.sf.latch_unsignaled=1
 vendor.gralloc.disable_ubwc=0
+debug.sf.auto_latch_unsignaled=0
 vendor.gralloc.enable_logs=0
 debug.sf.disable_client_composition_cache=1
-debug.sf.enable_gl_backpressure=0
+debug.sf.enable_gl_backpressure=1
 debug.sf.enable_hwc_vds=0
 debug.sf.enable_advanced_sf_phase_offset=1
-debug.sf.use_phase_offsets_as_durations=0
+debug.sf.use_phase_offsets_as_durations=1
 persist.mm.enable.prefetch=true
 ro.surface_flinger.set_idle_timer_ms?=1000
 ro.surface_flinger.set_touch_timer_ms?=1000
@@ -271,6 +274,9 @@ ro.opengles.version=196610
 graphics.gpu.profiler.support=true
 debug.sf.predict_hwc_composition_strategy=0
 debug.sf.treat_170m_as_sRGB=1
+debug.sf.early.sf.duration=15666666Add commentMore actions
+debug.sf.earlyGl.sf.duration=15666666
+debug.sf.late.sf.duration=15666666
 
 # Keyguard
 keyguard.no_require_sim=true
