@@ -111,6 +111,10 @@ on property:vendor.post_boot.parsed=1
     # Set power profile mode on boot
     setprop sys.perf_mode_active 1
 
+# Kill WALT CPU input boost
+    write /proc/sys/walt/input_boost/input_boost_freq "0 0 0 0 0 0 0"
+    write /proc/sys/walt/input_boost/input_boost_ms 0
+    
 # Gaming Mode: sys.perf_mode_active=3
 on property:sys.perf_mode_active=3
     write /sys/devices/system/cpu/qcom_lpm/parameters/sleep_disabled 1
