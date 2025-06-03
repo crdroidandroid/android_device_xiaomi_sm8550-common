@@ -55,3 +55,5 @@ persist.sys.parts.cpu.big.governor           u:object_r:exported_system_prop:s0
 persist.sys.parts.cpu.prime.min_frequency    u:object_r:exported_system_prop:s0
 persist.sys.parts.cpu.prime.max_frequency    u:object_r:exported_system_prop:s0
 persist.sys.parts.cpu.prime.governor         u:object_r:exported_system_prop:s0
+
+persist.sys.turbo_charge_current    u:object_r:exported_system_prop:s0

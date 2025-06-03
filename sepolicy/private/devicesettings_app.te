@@ -51,3 +51,15 @@ allow devicesettings_app {
 
 # Allow XiaomiParts to get settingsdebug.instant.packages prop
 get_prop(devicesettings_app, settingslib_prop)
+
+binder_call(devicesettings_app, default_android_hwservice)
+binder_call(devicesettings_app, gpuservice)
+
+set_prop(devicesettings_app, exported_system_prop)
+set_prop(devicesettings_app, system_prop)
+
+allow devicesettings_app property_socket:sock_file { write };
+allow devicesettings_app proc_stat:file { read open getattr };
+allow devicesettings_app init:unix_stream_socket connectto;
+
+allow devicesettings_app self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
