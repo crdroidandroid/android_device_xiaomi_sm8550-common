@@ -37,7 +37,7 @@ public class RefreshTileService extends TileService {
     private static final int[][] REFRESH_RATES = {
         {60, 60},    // 60 Hz
         {90, 90},    // 90 Hz
-        {120, 120},  // 120 HzAdd commentMore actions
+        {120, 120},  // 120 Hz
         {60, 90},    // 60-90 Hz
         {90, 120},   // 90-120 Hz
         {60, 120}    // 60-120 Hz
@@ -53,7 +53,7 @@ public class RefreshTileService extends TileService {
 
     private void syncFromSettings() {
         float minRate = Settings.System.getFloat(context.getContentResolver(), KEY_MIN_REFRESH_RATE, 60);
-        float maxRate = Settings.System.getFloat(context.getContentResolver(), KEY_PEAK_REFRESH_RATE, 120);Add commentMore actions
+        float maxRate = Settings.System.getFloat(context.getContentResolver(), KEY_PEAK_REFRESH_RATE, 120);
         
         for (int i = 0; i < REFRESH_RATES.length; i++) {
             if (REFRESH_RATES[i][0] == minRate && REFRESH_RATES[i][1] == maxRate) {
@@ -71,7 +71,6 @@ public class RefreshTileService extends TileService {
         
         Settings.System.putFloat(context.getContentResolver(), KEY_MIN_REFRESH_RATE, minRate);
         Settings.System.putFloat(context.getContentResolver(), KEY_PEAK_REFRESH_RATE, maxRate);
-        Settings.System.putFloat(context.getContentResolver(), KEY_PREFERRED_REFRESH_RATE, rate);
     }
 
     private String getFormatRate(float rate) {
@@ -87,7 +86,7 @@ public class RefreshTileService extends TileService {
         if (min == max) {
             displayText = String.format(Locale.US, "%d Hz", min);
         } else {
-            displayText = String.format(Locale.US, "%d - %d Hz", min, max);Add commentMore actions
+            displayText = String.format(Locale.US, "%d - %d Hz", min, max);
         }
 
         tile.setContentDescription(displayText);
