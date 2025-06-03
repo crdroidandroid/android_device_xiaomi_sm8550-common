@@ -107,6 +107,10 @@ on post-fs-data
     setprop dalvik.vm.dex2oat-cpu-set 0,1,2,3,4,5,6
     setprop dalvik.vm.dex2oat-threads 6
 
+    # Workarround for cache
+    rm /data/resource-cache
+    rm /data/system/package_cache
+    
 on property:vendor.post_boot.parsed=1
     # Set power profile mode on boot
     setprop sys.perf_mode_active 1
