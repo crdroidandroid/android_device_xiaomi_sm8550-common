@@ -210,7 +210,7 @@ DEVICE_MANIFEST_FILE := \
     $(COMMON_PATH)/configs/vintf/manifest_socrates.xml
 
 # Vendor security patch
-VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
+VENDOR_SECURITY_PATCH := 2025-06-05
 
 # DeviceAsWebcam
 TARGET_BUILD_DEVICE_AS_WEBCAM := true
