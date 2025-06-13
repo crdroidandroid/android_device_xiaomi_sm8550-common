@@ -275,7 +275,7 @@ ro.opengles.version=196610
 graphics.gpu.profiler.support=true
 debug.sf.predict_hwc_composition_strategy=0
 debug.sf.treat_170m_as_sRGB=1
-debug.sf.early.sf.duration=15666666Add commentMore actions
+debug.sf.early.sf.duration=15666666
 debug.sf.earlyGl.sf.duration=15666666
 debug.sf.late.sf.duration=15666666
 

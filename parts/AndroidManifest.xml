@@ -416,7 +416,7 @@
             android:value="true" />
         </service>
 
-        <!-- Turbo Charging -->Add commentMore actions
+        <!-- Turbo Charging -->
         <activity
             android:name=".turbocharging.TurboChargingActivity"
             android:exported="true"
