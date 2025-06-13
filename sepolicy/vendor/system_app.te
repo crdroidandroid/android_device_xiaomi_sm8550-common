@@ -28,6 +28,3 @@ r_dir_file(system_app, rootfs)
 # High Brightness Mode
 allow system_app vendor_sysfs_graphics:dir search;
 allow system_app vendor_sysfs_graphics:file rw_file_perms;
-
-# Charger
-allow system_app vendor_sysfs_power_supply:file { write setattr };
