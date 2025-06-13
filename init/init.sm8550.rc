@@ -207,3 +207,9 @@ on property:persist.sys.parts.cpu.prime.governor=*
 # Monitor and apply Hyper Charging value via system property persist.sys.turbo_charge_current
 on property:persist.sys.turbo_charge_current=*
     write /sys/class/power_supply/battery/constant_charge_current ${persist.sys.turbo_charge_current}
+
+service adsprpcd /vendor/bin/adsprpcd
+   class main
+   user media
+   group media
+   disabled
