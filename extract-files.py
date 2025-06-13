@@ -111,6 +111,10 @@ blob_fixups: blob_fixups_user_type = {
         'odm/lib64/nfc_nci.nqx.default.hw.so'
     ): blob_fixup()
         .add_needed('libbase_shim.so'),
+    (
+        'vendor/bin/init.kernel.post_boot-kalama.sh'
+    ): blob_fixup()
+        .regex_replace('echo 0-3 > /dev/cpuset/system-background/cpus', 'echo 0-2 > /dev/cpuset/system-background/cpus'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
