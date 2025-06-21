@@ -24,6 +24,7 @@ ro.vendor.audio.shortvideo.index=80
 
 # Camera
 ro.vendor.camera.interpolation.mialgo.support=true
+ro.camerax.extensions.enabled=true
 
 # Display
 ro.vendor.colorpick_adjust=true

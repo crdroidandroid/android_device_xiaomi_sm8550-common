@@ -48,6 +48,9 @@ vendor/lib64/libloadalgo_stub.so
 # ANT+
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so
 
+#  Camera Extensions
+system_ext/framework/camerax-vendor-extensions.jar
+
 # Audio
 odm/etc/UserDefinedMi.udm
 odm/etc/XiaoAiNiZaiNaMi.udm
