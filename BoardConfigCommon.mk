@@ -1,12 +1,10 @@
 #
-# Copyright (C) 2024 The LineageOS Project
+# Copyright (C) 2025 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
 COMMON_PATH := device/xiaomi/sm8550-common
-
-SELINUX_IGNORE_NEVERALLOWS := true
 
 # A/B
 AB_OTA_UPDATER := true
@@ -29,14 +27,15 @@ AB_OTA_PARTITIONS := \
 # API level
 BOARD_SHIPPING_API_LEVEL := 33
 
-# Boot control
-$(call soong_config_set, ufsbsg, ufsframework, bsg)
+SOONG_CONFIG_NAMESPACES += ufsbsg
+SOONG_CONFIG_ufsbsg += ufsframework
+SOONG_CONFIG_ufsbsg_ufsframework := bsg
 
 # Architecture
 TARGET_ARCH := arm64
-TARGET_ARCH_VARIANT := armv9-a
+TARGET_ARCH_VARIANT := armv8-a-branchprot
 TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_VARIANT := kryo785
+TARGET_CPU_VARIANT := kryo
 
 # Audio
 AUDIO_FEATURE_ENABLED_CIRRUS_CALIBRATION_RESISTANCE := true
@@ -52,18 +51,16 @@ AUDIO_FEATURE_ENABLED_KEEP_ALIVE := true
 AUDIO_FEATURE_ENABLED_GEF_SUPPORT := true
 AUDIO_FEATURE_ENABLED_SVA_MULTI_STAGE := true
 BOARD_SUPPORTS_SOUND_TRIGGER := true
+BOARD_SUPPORTS_OPENSOURCE_STHAL := true
 TARGET_USES_QCOM_MM_AUDIO := true
-TARGET_PROVIDES_AUDIO_HAL := true
-TARGET_PROVIDES_LIBAGM := true
-TARGET_PROVIDES_LIBAR_PAL := true
 
 $(call soong_config_set, android_hardware_audio, run_64bit, true)
 
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 
-# Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/configs/bluetooth/include
+# Display
+TARGET_SCREEN_DENSITY := 540
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/configs/config.fs
@@ -76,7 +73,6 @@ BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096
 
 BOARD_KERNEL_CMDLINE := video=vfb:640x400,bpp=32,memsize=3072000 disable_dma32=on swinfo.fingerprint=$(LINEAGE_VERSION) mtdoops.fingerprint=$(LINEAGE_VERSION)
-BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
 
 BOARD_BOOTCONFIG := androidboot.hardware=qcom androidboot.memcg=1 androidboot.usbcontroller=a600000.dwc3 androidboot.console=ttyMSM0
 
@@ -152,24 +148,15 @@ BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 
 BOARD_USES_METADATA_PARTITION := true
 
-XIAOMI_SSI_PARTITIONS := product system system_ext system_dlkm
-XIAOMI_TREBLE_PARTITIONS := odm vendor vendor_dlkm
-
-BOARD_XIAOMI_DYNAMIC_PARTITIONS_PARTITION_LIST := $(XIAOMI_SSI_PARTITIONS) $(XIAOMI_TREBLE_PARTITIONS)
+BOARD_XIAOMI_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system system_dlkm system_ext vendor vendor_dlkm
 BOARD_XIAOMI_DYNAMIC_PARTITIONS_SIZE := 9659482112 # (BOARD_SUPER_PARTITION_SIZE - 4 MiB)
 BOARD_SUPER_PARTITION_GROUPS := xiaomi_dynamic_partitions
 
-$(foreach p, $(call to-upper, $(XIAOMI_SSI_PARTITIONS)), \
-    $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := ext4))
-
-$(foreach p, $(call to-upper, $(XIAOMI_TREBLE_PARTITIONS)), \
-    $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := erofs))
-
 $(foreach p, $(call to-upper, $(BOARD_XIAOMI_DYNAMIC_PARTITIONS_PARTITION_LIST)), \
+    $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := ext4) \
     $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
 
 BOARD_PRODUCTIMAGE_MINIMAL_PARTITION_RESERVED_SIZE := false
-include vendor/lineage/config/BoardConfigReservedSize.mk
 
 BOARD_ROOT_EXTRA_FOLDERS += vendor/firmware vendor/firmware_mnt
 BOARD_ROOT_EXTRA_SYMLINKS += /lib/modules:/vendor/lib/modules
@@ -190,8 +177,6 @@ ENABLE_VENDOR_RIL_SERVICE := true
 
 # SEPolicy
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
-SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
-SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/public
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 
 # System properties
@@ -211,10 +196,7 @@ DEVICE_MANIFEST_FILE := \
     $(COMMON_PATH)/configs/vintf/manifest_socrates.xml
 
 # Vendor security patch
-VENDOR_SECURITY_PATCH := 2025-06-05
-
-# DeviceAsWebcam
-TARGET_BUILD_DEVICE_AS_WEBCAM := true
+VENDOR_SECURITY_PATCH := 2025-06-01
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
@@ -241,4 +223,5 @@ WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
+include vendor/lineage/config/BoardConfigReservedSize.mk
 include vendor/xiaomi/sm8550-common/BoardConfigVendor.mk

@@ -6,9 +6,6 @@ dev.pm.dyn_samplingrate=1
 # Graphics
 ro.opengles.version=196610
 
-# CameraX
-ro.camerax.extensions.enabled=true
-
 # HWUI
 ro.hwui.texture_cache_size=72
 ro.hwui.layer_cache_size=48
@@ -33,8 +30,6 @@ pm.sleep_mode=1
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
 persist.dbg.wfc_avail_ovr=1
-persist.data.df.iwlan_mux=9
-ro.vendor.use_data_netmgrd=true
 
 # Media
 media.settings.xml=/odm/etc/media_profiles_kalama.xml

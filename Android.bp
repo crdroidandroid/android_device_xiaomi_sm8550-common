@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2024 The LineageOS Project
+// Copyright (C) 2025 The LineageOS Project
 //
 // SPDX-License-Identifier: Apache-2.0
 //
@@ -43,18 +43,4 @@ install_symlink {
     vendor: true,
     installed_location: "firmware/wlan/qca_cld/kiwi_v2/WCNSS_qcom_cfg.ini",
     symlink_target: "/vendor/etc/wifi/kiwi_v2/WCNSS_qcom_cfg.ini",
-}
-
-prebuilt_hidl_interfaces {
-    name: "hidl_xiaomi_bgservice_interface",
-    interfaces: [
-        "vendor.xiaomi.hardware.bgservice@1.0::IBGService",
-    ],
-}
-
-prebuilt_hidl_interfaces {
-    name: "hidl_xiaomi_quickcamera_interface",
-    interfaces: [
-        "vendor.xiaomi.hardware.quickcamera@1.0::IQuickCameraService",
-    ],
 }

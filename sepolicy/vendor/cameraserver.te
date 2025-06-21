@@ -1,3 +1,0 @@
-get_prop(cameraserver, vendor_display_prop)
-type cameraserver_vendor_prop, file_type;
-allow cameraserver cameraserver_vendor_prop:file read;

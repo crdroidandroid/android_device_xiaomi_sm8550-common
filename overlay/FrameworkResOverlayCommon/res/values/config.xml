@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /*
-** Copyright 2009, The Android Open Source Project
+** Copyright 2009-2025, The Android Open Source Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
 ** you may not use this file except in compliance with the License.
@@ -132,21 +132,6 @@
     <!-- Whether the device enable the standalone (SA) mode of 5G NR.-->
     <bool name="config_telephony5gStandalone">true</bool>
 
-    <!-- Whether to adopt the predefined handover policies for IWLAN.
-        {@see CarrierConfigManager#KEY_IWLAN_HANDOVER_POLICY_STRING_ARRAY}
-    -->
-    <bool name="config_enable_iwlan_handover_policy">false</bool>
-
-    <!-- Whether enhanced IWLAN handover check is enabled. If enabled, telephony frameworks
-        will not perform handover if the target transport is out of service, or VoPS not
-        supported. The network will be torn down on the source transport, and will be
-        re-established on the target transport when condition is allowed for bringing up a
-        new network. -->
-    <bool name="config_enhanced_iwlan_handover_check">false</bool>
-
-    <!-- Support decoding of GSM 8 bit encoded SMS-->
-    <bool translatable="false" name="config_sms_decode_gsm_8bit_data">true</bool>
-
     <!-- Whether the device enable the non-standalone (NSA) mode of 5G NR.-->
     <bool name="config_telephony5gNonStandalone">true</bool>
 
@@ -242,30 +227,10 @@
     -->
     <bool name="config_enableWifiDisplay">true</bool>
 
-    <!-- Package names to use with vendor iwlan implementation. -->
-    <string name="config_wlan_data_service_package" translatable="false">vendor.qti.iwlan</string>
-    <string name="config_wlan_network_service_package" translatable="false">vendor.qti.iwlan</string>
-    <string name="config_qualified_networks_service_package" translatable="false">vendor.qti.iwlan</string>
-
-    <!-- Battery health -->
-    <bool name="config_supportBatteryHealth">true</bool>
-    <string name="config_batteryCalculatedCapacity">/sys/class/power_supply/battery/charge_full</string>
-    <string name="config_batteryDesignCapacity">/sys/class/power_supply/battery/charge_full_design</string>
-    <string name="config_batteryChargeCycles">/sys/class/power_supply/battery/cycle_count</string>
-
-    <!-- Default component for QR code scanner -->
-    <string name="config_defaultQrCodeComponent" translatable="false">com.android.camera/com.android.camera.Camera</string>
-
-    <!-- Whether device has turbo power charging support -->
-    <bool name="config_hasTurboPowerCharger">true</bool>
-
-    <!-- Path to fast charging status file to detect whether an oem fast charger is active -->
-    <string name="config_oemFastChargerStatusPath" translatable="false">/sys/class/qcom-battery/fastchg_mode</string>
-
     <!-- Whether device supports double tap to wake -->
     <bool name="config_supportDoubleTapWake">true</bool>
 
-    <!-- If device supports pickup/lift gesture -->
+    <!-- Doze: should the TYPE_PICK_UP_GESTURE sensor be used as a pulse signal. -->
     <bool name="config_dozePulsePickup">true</bool>
 
     <!-- The default intensity level for haptic feedback. See
@@ -285,11 +250,4 @@
 
     <!-- The name of the package that will hold the dialer role by default. -->
     <string name="config_defaultDialer" translatable="false">com.google.android.dialer</string>
-
-    <!-- Should we vibrate on an icon animation of the shelf. This should only be active if the
-    vibrator is capable of subtle vibrations -->
-    <bool name="config_vibrateOnIconAnimation">true</bool>
-
-    <!-- Shutdown if the battery temperature exceeds (this value * 0.1) Celsius. -->
-    <integer name="config_shutdownBatteryTemperature">580</integer>
 </resources>

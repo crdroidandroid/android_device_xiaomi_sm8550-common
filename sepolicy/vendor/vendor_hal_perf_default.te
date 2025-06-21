@@ -1,2 +1,0 @@
-allow vendor_hal_perf_default hal_audio_default:file {  read  };
-allow vendor_hal_perf_default hal_audio_default:file {  open  };

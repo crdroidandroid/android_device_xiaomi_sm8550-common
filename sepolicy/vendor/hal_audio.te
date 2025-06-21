@@ -1,3 +1,1 @@
 hal_client_domain(hal_audio_default, hal_dms)
-allow hal_audio_default sysfs:file rw_file_perms;
-allow hal_audio_default sysfs:dir { open read };

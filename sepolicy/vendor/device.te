@@ -1,7 +1,1 @@
 type vendor_fingerprint_device, dev_type;
-type stmvl53l5_device, dev_type;
-type camlog_device, dev_type;
-type migt_dev, dev_type, mlstrustedobject;
-
-# Ril
-type vendor_radio_smd_device, dev_type;

@@ -1,22 +1,6 @@
 # Camera
-persist.vendor.camera.mi.dualcal.               u:object_r:vendor_camera_prop:s0
-persist.vendor.camera.mi.module.                u:object_r:vendor_camera_prop:s0
-persist.vendor.cameraid.                        u:object_r:vendor_camera_prop:s0
-persist.vendor.cam.icap.dump                    u:object_r:vendor_camera_prop:s0
 persist.vendor.EnableP3ColorSpace               u:object_r:vendor_camera_p3enable_prop:s0
-persist.vendor.low.cutoff.                      u:object_r:vendor_camera_prop:s0
-persist.vendor.low.cutoff                       u:object_r:vendor_camera_prop:s0
-ro.vendor.audio.us.proximity                    u:object_r:vendor_camera_prop:s0
-ro.vendor.audio.zoom.type                       u:object_r:vendor_camera_prop:s0
-ro.vendor.audio.unite.record.type               u:object_r:vendor_camera_prop:s0
 vendor.camera.sensor.                           u:object_r:vendor_camera_sensor_prop:s0
-vendor.camera.sensor.logsystem                  u:object_r:vendor_camera_prop:s0
-vendor.camera.watermark.en                      u:object_r:vendor_camera_prop:s0
-vendor.miui.vcamera.data                        u:object_r:vendor_camera_prop:s0
-vendor.miui.vcamera.state                       u:object_r:vendor_camera_prop:s0
-vendor.panel.display                            u:object_r:vendor_camera_prop:s0
-vendor.vidhance.preview.vs.cropfactor           u:object_r:vendor_camera_prop:s0
-vendor.vidhance.video.vs.cropfactor             u:object_r:vendor_camera_prop:s0
 
 # Fingerprint
 persist.vendor.fingerprint. u:object_r:vendor_fp_prop:s0
@@ -24,19 +8,6 @@ persist.vendor.sys.fp. u:object_r:vendor_fp_prop:s0
 
 # Thermal
 vendor.sys.thermal.data.path u:object_r:vendor_thermal_normal_prop:s0
-
-# Ril
-persist.vendor.radio.imei                       u:object_r:vendor_radio_prop:s0
-persist.vendor.radio.meid                       u:object_r:vendor_radio_prop:s0
-ro.vendor.oem.boot_completed                    u:object_r:vendor_radio_prop:s0
-ro.vendor.oem.imei                              u:object_r:vendor_radio_prop:s0
-ro.vendor.oem.meid                              u:object_r:vendor_radio_prop:s0
-ro.vendor.oem.psno                              u:object_r:vendor_radio_prop:s0
-ro.vendor.oem.serialno                          u:object_r:vendor_radio_prop:s0
-ro.vendor.oem.sno                               u:object_r:vendor_radio_prop:s0
-ro.vendor.ril                           u:object_r:vendor_public_vendor_default_prop:s0
-ro.vendor.ril.svlte1x                   u:object_r:vendor_radio_prop:s0
-ro.vendor.ril.svdo                      u:object_r:vendor_radio_prop:s0
 
 # NFC
 ro.vendor.nfc. u:object_r:vendor_nfc_mi_prop:s0

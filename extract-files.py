@@ -1,6 +1,6 @@
 #!/usr/bin/env -S PYTHONPATH=../../../tools/extract-utils python3
 #
-# SPDX-FileCopyrightText: 2024 The LineageOS Project
+# SPDX-FileCopyrightText: 2025 The LineageOS Project
 # SPDX-License-Identifier: Apache-2.0
 #
 
@@ -46,21 +46,15 @@ lib_fixups: lib_fixups_user_type = {
     ): lib_fixup_vendor_suffix,
     (
         'audio.primary.kalama',
-        'libar-acdb',
-        'libar-gsl',
         'libagmclient',
-        'liblx-osal',
         'libagmmixer',
-        'libats',
         'libpalclient',
         'libwpa_client',
-        'libagm',
         'libar-acdb',
-        'libar-gsl',
-        'liblx-osal',
-        'libar-pal',
         'libats',
-        'vendor.qti.hardware.AGMIPC@1.0-impl',
+        'liblx-osal',
+        'libagm',
+        'libar-pal',
     ): lib_fixup_remove,
 }
 
@@ -81,40 +75,19 @@ blob_fixups: blob_fixups_user_type = {
         .add_line_if_missing('pipe2: 1'),
     'vendor/etc/qcril_database/upgrade/config/6.0_config.sql' : blob_fixup()
         .regex_replace('(persist\\.vendor\\.radio\\.redir_party_num.*)true', '\\1false'),
-    (
-        'vendor/lib64/c2.dolby.hevc.dec.so',
-        'vendor/lib64/c2.dolby.hevc.enc.so',
-        'vendor/lib64/c2.dolby.hevc.sec.dec.so',
-        'vendor/lib64/libDecoderProcessor.so',
-        'vendor/lib64/libdlbdsservice.so',
-        'vendor/lib64/libdlbpreg.so',
-        'vendor/lib64/libswspatializer_ext.so',
-        'vendor/lib64/soundfx/libdlbvol.so',
-        'vendor/lib64/soundfx/libhwdap.so',
-        'vendor/lib64/soundfx/libswspatializer.so',
-        'vendor/lib64/hw/audio.primary.kalama.so',
-    ): blob_fixup()
-        .add_needed('libstagefright_foundation-v33.so'),
     'vendor/lib64/c2.dolby.client.so' : blob_fixup()
-        .add_needed('libcodec2_hidl_shim.so'),
+        .add_needed('dolbycodec_shim.so'),
     'vendor/lib64/libqcodec2_core.so' : blob_fixup()
         .add_needed('libcodec2_shim.so'),
-    'vendor/lib64/vendor.libdpmframework.so': blob_fixup()
+    'vendor/lib64/vendor.libdpmframework.so' : blob_fixup()
         .add_needed('libhidlbase_shim.so'),
-    (
-        'vendor/etc/media_codecs_kalama.xml',
-        'vendor/etc/media_codecs_kalama_vendor.xml',
-    ): blob_fixup()
-        .regex_replace('.+media_codecs_(google_audio|google_c2|google_telephony|vendor_audio).+\n', ''),
     (
         'vendor/lib64/libstfactory-vendor.so',
         'odm/lib64/nfc_nci.nqx.default.hw.so'
     ): blob_fixup()
         .add_needed('libbase_shim.so'),
-    (
-        'vendor/bin/init.kernel.post_boot-kalama.sh'
-    ): blob_fixup()
-        .regex_replace('echo 0-3 > /dev/cpuset/system-background/cpus', 'echo 0-2 > /dev/cpuset/system-background/cpus'),
+    'vendor/etc/ueventd.rc' : blob_fixup()
+        .add_line_if_missing('\n# Charger\n/sys/class/qcom-battery     night_charging            0660    system  system')
 }  # fmt: skip
 
 module = ExtractUtilsModule(

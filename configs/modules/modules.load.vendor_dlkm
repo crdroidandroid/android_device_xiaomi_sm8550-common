@@ -200,7 +200,6 @@ cfg80211.ko
 mac80211.ko
 qrtr-smd.ko
 qrtr-mhi.ko
-mi_thermal_interface.ko
 kunit.ko
 audio_prm_dlkm.ko
 spf_core_dlkm.ko

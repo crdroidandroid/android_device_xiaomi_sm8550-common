@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 The LineageOS Project
+ * Copyright (C) 2025 The LineageOS Project
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -98,7 +98,7 @@ class XiaomiSM8550UdfpsHander : public UdfpsHandler {
         } else if (fileExists(FOD_PRESS_STATUS_PATH)) {
             set(FOD_PRESS_STATUS_PATH, value);
         } else {
-            LOG(WARNING) << "Neither " << FOD_STATUS_PATH << " nor " << FOD_PRESS_STATUS_PATH << " exists!";
+            LOG(WARNING) << "Neither " << FOD_STATUS_PATH << " or " << FOD_PRESS_STATUS_PATH << " exists!";
         }
     }
 
