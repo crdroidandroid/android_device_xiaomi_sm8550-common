@@ -373,4 +373,31 @@
         <item>3</item>
         <item>4</item>
     </string-array>
+
+    <string-array name="zram_size_entries">
+        <item>Disabled</item>
+        <item>2GB</item>
+        <item>4GB</item>
+        <item>8GB</item>
+        <item>Dynamic (default)</item>
+    </string-array>
+    <string-array name="zram_size_values">
+        <item>0</item>
+        <item>2</item>
+        <item>4</item>
+        <item>8</item>
+        <item>-1</item>
+    </string-array>
+    <string-array name="zram_compression_entries">
+    	<item>lz4 (default)</item>
+    	<item>lzo</item>
+    	<item>lzo-rle</item>
+    	<item>zstd</item>
+	</string-array>
+    <string-array name="zram_compression_values">
+    	<item>lz4</item>
+    	<item>lzo</item>
+    	<item>lzo-rle</item>
+    	<item>zstd</item>
+    </string-array>
 </resources>

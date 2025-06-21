@@ -51,3 +51,6 @@
 
 # Process and system statistics files
 /proc/stat u:object_r:proc_stat:s0
+
+# ZRAM
+/sys/block/zram0/comp_algorithm 					       u:object_r:sysfs_zram:s0

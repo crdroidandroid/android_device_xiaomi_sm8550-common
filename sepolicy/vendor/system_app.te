@@ -1,0 +1,5 @@
+# Allow system_app to set ZRAM property
+set_prop(system_app, vendor_zram_prop)
+get_prop(system_app, vendor_zram_prop)
+set_prop(system_app, vendor_default_prop)
+get_prop(system_app, vendor_default_prop)

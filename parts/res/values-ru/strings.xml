@@ -267,4 +267,23 @@
     <string name="schedule_always">Всегда</string>
     <string name="schedule_night_only">Только ночью</string>
     <string name="schedule_custom">По расписанию</string>
+
+    <!-- Zram Settings -->
+    <string name="zram_size_title">Размер ZRAM</string>
+    <string name="zram_size_summary">Настроить размер подкачки ZRAM</string>
+    <string name="zram_disabled">Отключено</string>
+    <string name="zram_size_dynamic">Динамический (по умолчанию)</string>
+    <string name="zram_size_2gb">2 ГБ</string>
+    <string name="zram_size_4gb">4 ГБ</string>
+    <string name="zram_size_8gb">8 ГБ</string>
+    <string name="zram_summary">Выбрать, какие настройки ZRAM применить</string>
+    <string name="zram_change_applied">Настройка ZRAM сохранена (применится после перезагрузки)</string>
+    <string name="zram_reboot_recommended">Чтобы изменения вступили в силу, перезагрузите устройство</string>
+    <string name="zram_compression_title">Алгоритм сжатия</string>
+    <string name="zram_compression_summary">Выберите алгоритм сжатия ZRAM</string>
+    <string name="swappiness_title">Swappiness</string>
+    <string name="swappiness_summary">Настройте, насколько агрессивно ядро ​​меняет страницы памяти (по умолчанию: 60)</string>
+    <string name="swappiness_value">%1$d</string>
+    <string name="zram_change_failed">Не удалось применить настройки ZRAM</string>
+    <string name="advanced_settings">Расширенные настройки</string>
 </resources>

@@ -266,4 +266,23 @@
     <string name="schedule_always">Always</string> 
     <string name="schedule_night_only">Night only</string> 
     <string name="schedule_custom">Scheduled</string>
+
+    <!-- Zram Settings -->
+    <string name="zram_size_title">ZRAM size</string>
+    <string name="zram_size_summary">Configure ZRAM swap size</string>
+    <string name="zram_disabled">Disabled</string>
+    <string name="zram_size_dynamic">Dynamic (default)</string>
+    <string name="zram_size_2gb">2GB</string>
+    <string name="zram_size_4gb">4GB</string>
+    <string name="zram_size_8gb">8GB</string>
+    <string name="zram_summary">Choose which ZRAM settings to apply</string>
+    <string name="zram_change_applied">ZRAM setting saved (will apply after reboot)</string>
+    <string name="zram_reboot_recommended">For changes to take effect, please reboot your device</string>
+    <string name="zram_compression_title">Compression algorithm</string>
+    <string name="zram_compression_summary">Choose ZRAM compression algorithm</string>
+    <string name="swappiness_title">Swappiness</string>
+    <string name="swappiness_summary">Adjust how aggressively the kernel swaps memory pages (default: 60)</string>
+    <string name="swappiness_value">%1$d</string>
+    <string name="zram_change_failed">Failed to apply ZRAM settings</string>
+    <string name="advanced_settings">Advanced settings</string>
 </resources>
