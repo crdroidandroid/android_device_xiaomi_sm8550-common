@@ -1,3 +1,25 @@
+# Camera
+allow system_app camlog_device:chr_file { getattr ioctl open read watch watch_reads write };
+allow system_app hal_camera_default:binder { call transfer };
+allow system_app hal_camera_default:binder transfer;
+allow system_app hal_camera_default:fd *;
+allow system_app hal_quickcamera_hwservice:hwservice_manager find;
+allow system_app hal_quickcamera:binder { call transfer };
+allow system_app hal_quickcamera:binder transfer;
+allow system_app hal_quickcamera:fd *;
+allow system_app hal_quickcamera_default:binder { call transfer };
+allow system_app hal_quickcamera_default:binder transfer;
+allow system_app hal_quickcamera_default:fd *;
+allow system_app vendor_camera_data_file:dir { append map r_dir_perms write };
+allow system_app vendor_camera_data_file:file { getattr open read };
+allow system_app vendor_hal_camerapostproc_xiaomi_hwservice:hwservice_manager find;
+allow system_app vendor_hal_camerapostproc_xiaomi:binder { call transfer };
+allow system_app vendor_hal_camerapostproc_xiaomi:binder transfer;
+allow system_app vendor_hal_camerapostproc_xiaomi:fd *;
+get_prop(system_app, vendor_camera_sensor_prop)
+hal_client_domain(system_app, vendor_hal_camerapostproc_xiaomi)
+hal_client_domain(system_app, hal_quickcamera)
+
 # Allow system_app to set ZRAM property
 set_prop(system_app, vendor_zram_prop)
 get_prop(system_app, vendor_zram_prop)
