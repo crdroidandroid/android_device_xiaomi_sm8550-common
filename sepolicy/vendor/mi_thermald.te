@@ -12,7 +12,7 @@ allow mi_thermald sysfs:lnk_file r_file_perms;
 allow mi_thermald sysfs_devices_system_cpu:file rw_file_perms;
 allow mi_thermald sysfs_thermal:file w_file_perms;
 allow mi_thermald sys_thermal_wifi_limit:file rw_file_perms;
-allow mi_thermald thermal_data_file:dir { add_name read remove_name search watch write getattr lock rmdir reparent };Add commentMore actions
+allow mi_thermald thermal_data_file:dir { add_name read remove_name search watch write getattr lock rmdir reparent };
 allow mi_thermald thermal_data_file:file { create getattr open read rename setattr unlink write ioctl lock append };
 allow mi_thermald vendor_data_file:dir { add_name read remove_name watch write };
 allow mi_thermald vendor_data_file:file { create getattr open read rename setattr unlink write };
@@ -29,7 +29,7 @@ r_dir_file(mi_thermald, sysfs_leds)
 r_dir_file(mi_thermald, sysfs_thermal)
 set_prop(mi_thermald, vendor_thermal_normal_prop)
 
-# Allow mi_thermald to access thermal sysfsAdd commentMore actions
+# Allow mi_thermald to access thermal sysfs
 allow mi_thermald sysfs_thermal:dir r_dir_perms;
 allow mi_thermald sysfs_thermal:file rw_file_perms;
 allow mi_thermald sysfs_thermal:lnk_file r_file_perms;
