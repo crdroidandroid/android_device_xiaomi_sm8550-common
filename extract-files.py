@@ -81,6 +81,8 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libcodec2_shim.so'),
     'vendor/lib64/vendor.libdpmframework.so' : blob_fixup()
         .add_needed('libhidlbase_shim.so'),
+    'vendor/lib64/hw/camera.qcom.so': blob_fixup()
+        .add_needed('libcamera_metadata_shim.so'),
     (
         'vendor/lib64/libstfactory-vendor.so',
         'odm/lib64/nfc_nci.nqx.default.hw.so'
