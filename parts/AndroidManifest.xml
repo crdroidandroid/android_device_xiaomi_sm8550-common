@@ -371,20 +371,20 @@
             </intent-filter>
         </receiver>
 
-        <!-- Powertool BootReceiver -->
         <activity
     	    android:name=".zram.ZramActivity"
             android:label="@string/zram_size_title"
+            android:theme="@style/Theme.SubSettingsBase"
             android:exported="true">
-            <intent-filter>
+    	    <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
             <meta-data
-                android:name="com.android.settings.category"
-                android:value="com.android.settings.category.ia.battery" />
+        	android:name="com.android.settings.category"
+        	android:value="com.android.settings.category.ia.battery" />
             <meta-data
-                android:name="com.android.settings.summary"
-                android:resource="@string/zram_summary" />
+       		android:name="com.android.settings.summary"
+        	android:resource="@string/zram_summary" />
         </activity>
     </application>
 </manifest>

@@ -18,3 +18,9 @@ allow devicesettings_app exported3_system_prop:property_service set;
 allow devicesettings_app default_prop:file { read open getattr map };
 allow devicesettings_app exported_system_prop:property_service set;
 allow devicesettings_app system_prop:property_service set;
+
+# Allow devicesettings_app to set ZRAM property
+set_prop(devicesettings_app, vendor_zram_prop)
+get_prop(devicesettings_app, vendor_zram_prop)
+set_prop(devicesettings_app, vendor_default_prop)
+get_prop(devicesettings_app, vendor_default_prop)

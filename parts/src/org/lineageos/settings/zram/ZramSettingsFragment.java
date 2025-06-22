@@ -23,7 +23,7 @@ import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragment;
 import org.lineageos.settings.R;
-import org.lineageos.settings.CustomSeekBarPreference;
+import org.lineageos.settings.zram.CustomSeekBarPreference;
 
 public class ZramSettingsFragment extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {

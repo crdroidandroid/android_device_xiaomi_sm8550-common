@@ -20,7 +20,7 @@
         android:defaultValue="lz4" />
         
     <PreferenceCategory android:title="@string/advanced_settings">
-        <org.lineageos.settings.CustomSeekBarPreference
+        <org.lineageos.settings.zram.CustomSeekBarPreference
             android:key="swappiness"
             android:title="@string/swappiness_title"
             android:summary="@string/swappiness_summary"
