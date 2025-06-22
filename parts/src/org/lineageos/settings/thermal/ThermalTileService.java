@@ -63,15 +63,21 @@ public class ThermalTileService extends TileService {
         super.onCreate();
         mSharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+    
+        modes = new String[]{
+            getString(R.string.thermal_mode_default),
+            getString(R.string.thermal_mode_performance),
+            getString(R.string.thermal_mode_battery_saver),
+            getString(R.string.thermal_mode_unknown)
+    };
 
-        // Ensure a default value for the master switch
-        if (!mSharedPrefs.contains(THERMAL_ENABLED_KEY)) {
-            mSharedPrefs.edit().putBoolean(THERMAL_ENABLED_KEY, false).apply();
-        }
-
-        setupNotificationChannel();
-        registerBatterySaverObserver();
+    if (!mSharedPrefs.contains(THERMAL_ENABLED_KEY)) {
+        mSharedPrefs.edit().putBoolean(THERMAL_ENABLED_KEY, false).apply();
     }
+
+    setupNotificationChannel();
+    registerBatterySaverObserver();
+}
 
     @Override
     public void onStartListening() {
@@ -136,6 +142,15 @@ public class ThermalTileService extends TileService {
     }
 
     private void setThermalMode(int mode) {
+        if (modes == null) {
+        modes = new String[]{
+                getString(R.string.thermal_mode_default),
+                getString(R.string.thermal_mode_performance),
+                getString(R.string.thermal_mode_battery_saver),
+                getString(R.string.thermal_mode_unknown)
+        };
+    }
+
         int thermalValue;
         switch (mode) {
             case MODE_DEFAULT:
@@ -157,6 +172,7 @@ public class ThermalTileService extends TileService {
         }
 
         boolean success = FileUtils.writeLine(THERMAL_SCONFIG, String.valueOf(thermalValue));
+        String modeName = (modes != null && mode >= 0 && mode < modes.length) ? modes[mode] : "Unknown";
         Log.d(TAG, "Thermal mode changed to " + modes[mode] + ": " + success);
 
         if (mode == MODE_BATTERY_SAVER) {
@@ -187,21 +203,34 @@ public class ThermalTileService extends TileService {
     }
 
     private void updateTile() {
-        Tile tile = getQsTile();
+    Tile tile = getQsTile();
         if (tile != null) {
-            if (currentMode == MODE_PERFORMANCE) {
-                tile.setState(Tile.STATE_ACTIVE);
-                tile.setIcon(Icon.createWithResource(this, R.drawable.ic_thermal_performance));
-            } else if (currentMode == MODE_BATTERY_SAVER) {
-                tile.setState(Tile.STATE_INACTIVE);
-                tile.setIcon(Icon.createWithResource(this, R.drawable.ic_thermal_battery_saver));
-            } else {
-                tile.setState(Tile.STATE_INACTIVE);
-                tile.setIcon(Icon.createWithResource(this, R.drawable.ic_thermal_default));
+        if (modes == null || currentMode < 0 || currentMode >= modes.length) {
+            currentMode = MODE_DEFAULT;
+            if (modes == null) {
+                modes = new String[]{
+                        getString(R.string.thermal_mode_default),
+                        getString(R.string.thermal_mode_performance),
+                        getString(R.string.thermal_mode_battery_saver),
+                        getString(R.string.thermal_mode_unknown)
+                };
             }
-            tile.setLabel(getString(R.string.thermal_tile_label));
-            tile.setSubtitle(modes[currentMode]);
-            tile.updateTile();
+        }
+
+        if (currentMode == MODE_PERFORMANCE) {
+            tile.setState(Tile.STATE_ACTIVE);
+            tile.setIcon(Icon.createWithResource(this, R.drawable.ic_thermal_performance));
+        } else if (currentMode == MODE_BATTERY_SAVER) {
+            tile.setState(Tile.STATE_INACTIVE);
+            tile.setIcon(Icon.createWithResource(this, R.drawable.ic_thermal_battery_saver));
+        } else {
+            tile.setState(Tile.STATE_INACTIVE);
+            tile.setIcon(Icon.createWithResource(this, R.drawable.ic_thermal_default));
+        }
+        
+        tile.setLabel(getString(R.string.thermal_tile_label));
+        tile.setSubtitle(modes[currentMode]);
+        tile.updateTile();
         }
     }
 
