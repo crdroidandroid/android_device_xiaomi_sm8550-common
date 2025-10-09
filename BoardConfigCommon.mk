@@ -164,7 +164,7 @@ $(foreach p, $(call to-upper, $(BOARD_XIAOMI_DYNAMIC_PARTITIONS_PARTITION_LIST))
     $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
 
 BOARD_PRODUCTIMAGE_MINIMAL_PARTITION_RESERVED_SIZE := false
-include vendor/lineage/config/BoardConfigReservedSize.mk
+include vendor/infinity/config/BoardConfigReservedSize.mk
 
 BOARD_ROOT_EXTRA_FOLDERS += vendor/firmware vendor/firmware_mnt
 BOARD_ROOT_EXTRA_SYMLINKS += /lib/modules:/vendor/lib/modules
@@ -199,7 +199,7 @@ DEVICE_MATRIX_FILE := $(COMMON_PATH)/configs/vintf/compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(COMMON_PATH)/configs/vintf/framework_matrix.xml \
     $(COMMON_PATH)/configs/vintf/product_framework_matrix.xml \
-    vendor/lineage/config/device_framework_matrix.xml
+    vendor/infinity/config/device_framework_matrix.xml
 DEVICE_MANIFEST_FILE := \
     $(COMMON_PATH)/configs/vintf/manifest_kalama.xml \
     $(COMMON_PATH)/configs/vintf/manifest_socrates.xml
