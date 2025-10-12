@@ -37,10 +37,3 @@ qemu.hw.mainkeys=0
 rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ril.subscription.types=NV,RUIM
 ro.telephony.default_network=33,33
-
-# Infinity
-ro.product.marketname=Xiaomi 13 Pro 5G
-ro.infinity.soc=Snapdragon 8 Gen 2
-ro.infinity.battery=4820 mAh
-ro.infinity.display=1440 x 3200, 120 Hz
-ro.infinity.camera=50MP + 50MP + 50MP + 32MP

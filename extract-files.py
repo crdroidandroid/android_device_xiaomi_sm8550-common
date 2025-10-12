@@ -65,12 +65,6 @@ dev_null_sha256 = b'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852
 blob_fixups: blob_fixups_user_type = {
     'odm/lib64/libmt@1.3.so' : blob_fixup()
         .replace_needed('libcrypto.so', 'libcrypto-v33.so'),
-    'odm/lib64/libaudioroute_ext.so' : blob_fixup()
-        .replace_needed('libaudioroute.so', 'libaudioroute-v34.so'),
-    'vendor/lib64/libar-pal.so' : blob_fixup()
-        .replace_needed('libaudioroute.so', 'libaudioroute-v34.so'),
-    'vendor/lib64/libagm.so' : blob_fixup()
-        .replace_needed('libaudioroute.so', 'libaudioroute-v34.so'),
     ('vendor/bin/hw/android.hardware.security.keymint-service-qti',
      'vendor/lib64/libqtikeymint.so') : blob_fixup()
         .add_needed('android.hardware.security.rkp-V3-ndk.so'),
