@@ -242,11 +242,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libcodec2_hidl_shim
 
-# ModemManager
-PRODUCT_PACKAGES += \
-    libqesdk_manager_32bit_stub \
-    libqesdk2_0_32bit_stub
-
 # Network
 PRODUCT_PACKAGES += \
     libnetfilter_conntrack \
