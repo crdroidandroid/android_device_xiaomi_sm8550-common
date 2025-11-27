@@ -326,6 +326,8 @@
 
     <!-- Pocket Lock -->
     <bool name="config_pocketModeSupported">true</bool>
+    <string name="config_pocketJudgeVendorSensorName">xiaomi.sensor.nonui</string>
+    <item name="config_pocketJudgeVendorSensorValue" format="float" type="dimen">2.0</item>
 
     <!-- Whether to enable fp unlock when screen turns off on udfps devices -->
     <bool name="config_screen_off_udfps_enabled">true</bool>
