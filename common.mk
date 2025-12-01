@@ -329,6 +329,7 @@ PRODUCT_COPY_FILES += \
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.xiaomi-multihal \
+    sensor-notifier \
     sensors.dynamic_sensor_hal
 
 PRODUCT_COPY_FILES += \

@@ -17,6 +17,7 @@ on boot
     chown system system /sys/class/touch/touch_dev/grip_rejection
     chown system system /sys/class/touch/touch_dev/fod_finger_state
     chown system system /sys/class/touch/touch_dev/gesture_single_tap_state
+    chown system system /dev/xiaomi-touch
 
     chmod 0664 /sys/devices/platform/goodix_ts.0/double_tap_enable
     chmod 0664 /sys/devices/platform/goodix_ts.0/fod_enable
@@ -26,6 +27,7 @@ on boot
     chmod 0664 /sys/class/touch/touch_dev/grip_rejection
     chmod 0660 /sys/class/touch/touch_dev/fod_finger_state
     chmod 0660 /sys/class/touch/touch_dev/gesture_single_tap_state
+    chmod 0660 /dev/xiaomi-touch
 
     chown system system /sys/class/power_supply/battery/constant_charge_current
     chmod 0664 /sys/class/power_supply/battery/constant_charge_current
