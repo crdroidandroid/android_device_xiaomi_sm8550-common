@@ -128,6 +128,18 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/bin/init.kernel.post_boot-kalama.sh'
     ): blob_fixup()
         .regex_replace('echo 0-3 > /dev/cpuset/system-background/cpus', 'echo 0-2 > /dev/cpuset/system-background/cpus'),
+    (
+        'vendor/bin/poweropt-service',
+        'vendor/lib64/libaodoptfeature.so',
+        'vendor/lib64/libdpps.so',
+        'vendor/lib64/libpowercore.so',
+        'vendor/lib64/libpsmoptfeature.so',
+        'vendor/lib64/libsnapdragoncolor-manager.so',
+        'vendor/lib64/libstandbyfeature.so',
+        'vendor/lib64/libvideooptfeature.so',
+        'vendor/lib64/libaudiocloudctrl.so',
+    ): blob_fixup()
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
