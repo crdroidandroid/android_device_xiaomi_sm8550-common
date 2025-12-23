@@ -84,9 +84,6 @@ blob_fixups: blob_fixups_user_type = {
             'libaudioroute-v34.so',
         ),
     (
-        'vendor/lib64/c2.dolby.hevc.dec.so',
-        'vendor/lib64/c2.dolby.hevc.enc.so',
-        'vendor/lib64/c2.dolby.hevc.sec.dec.so',
         'vendor/lib64/hw/audio.primary.kalama.so',
         'vendor/lib64/libcodec2_soft_ac4dec.so',
         'vendor/lib64/libcodec2_soft_ddpdec.so',
@@ -105,7 +102,7 @@ blob_fixups: blob_fixups_user_type = {
             'libstagefright_foundation-v33.so',
         ),
     'vendor/lib64/c2.dolby.client.so' : blob_fixup()
-        .add_needed('libcodec2_hidl_shim.so'),
+        .add_needed('dolbycodec_shim.so'),
     'vendor/lib64/libqcodec2_core.so' : blob_fixup()
         .add_needed('libcodec2_shim.so'),
     'vendor/lib64/vendor.libdpmframework.so': blob_fixup()
@@ -114,11 +111,6 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libqms_xiaomi.so',
     ): blob_fixup()
         .add_needed('libbinder_shim.so'),
-    (
-        'vendor/bin/hw/vendor.dolby.media.c2@1.0-service', 
-        'vendor/bin/hw/dolbycodec2',
-    ): blob_fixup()
-        .add_needed('libshim_dolby.so'),
     (
         'vendor/etc/media_codecs_kalama.xml',
         'vendor/etc/media_codecs_kalama_vendor.xml',
