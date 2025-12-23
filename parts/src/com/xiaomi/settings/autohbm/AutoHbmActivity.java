@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.xiaomi.settings.autohbm;
+package org.lineageos.settings.autohbm;
 
 import android.os.Bundle;
 

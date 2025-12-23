@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package com.xiaomi.settings.autohbm;
+package org.lineageos.settings.autohbm;
 
 import android.content.SharedPreferences;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
 import androidx.preference.PreferenceManager;
 
-import com.xiaomi.settings.Constants;
-import com.xiaomi.settings.R;
-import com.xiaomi.settings.utils.FileUtils;
+import org.lineageos.settings.Constants;
+import org.lineageos.settings.R;
+import org.lineageos.settings.utils.FileUtils;
 
 public class AutoHbmTileService extends TileService {
     @Override

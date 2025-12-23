@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.xiaomi.settings.autohbm;
+package org.lineageos.settings.autohbm;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -27,9 +27,9 @@ import android.provider.Settings;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
 import androidx.preference.PreferenceManager;
-import com.xiaomi.settings.Constants;
-import com.xiaomi.settings.R;
-import com.xiaomi.settings.utils.FileUtils;
+import org.lineageos.settings.Constants;
+import org.lineageos.settings.R;
+import org.lineageos.settings.utils.FileUtils;
 
 public class HbmTileService extends TileService {
     private static final int MAX_BRIGHTNESS = 4000;

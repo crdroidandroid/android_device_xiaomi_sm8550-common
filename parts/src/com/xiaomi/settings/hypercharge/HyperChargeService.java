@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package com.xiaomi.settings.hypercharge;
+package org.lineageos.settings.hypercharge;
 
 import android.app.Service;
 import android.content.BroadcastReceiver;
@@ -16,8 +16,8 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.util.Log;
 
-import com.xiaomi.settings.Constants;
-import com.xiaomi.settings.utils.FileUtils;
+import org.lineageos.settings.Constants;
+import org.lineageos.settings.utils.FileUtils;
 
 public class HyperChargeService extends Service {
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.xiaomi.settings.thermal;
+package org.lineageos.settings.thermal;
 
 import android.content.Context;
 import android.content.Intent;
@@ -35,8 +35,8 @@ import androidx.preference.PreferenceManager;
 
 import com.android.settingslib.applications.AppUtils;
 
-import com.xiaomi.settings.powertools.PowerProfileUtil;
-import com.xiaomi.settings.utils.FileUtils;
+import org.lineageos.settings.powertools.PowerProfileUtil;
+import org.lineageos.settings.utils.FileUtils;
 
 import java.util.List;
 import java.util.Map;

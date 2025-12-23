@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.xiaomi.settings.powertools;
+package org.lineageos.settings.powertools;
 
 import android.os.Bundle;
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
-import com.xiaomi.settings.R;
+import org.lineageos.settings.R;
 
 public class PowertoolsActivity extends CollapsingToolbarBaseActivity {
     @Override

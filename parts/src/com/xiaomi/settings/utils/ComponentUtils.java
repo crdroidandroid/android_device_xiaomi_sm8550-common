@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.xiaomi.settings.utils;
+package org.lineageos.settings.utils;
 
 import android.content.ComponentName;
 import android.content.Context;

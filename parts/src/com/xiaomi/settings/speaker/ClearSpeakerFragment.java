@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.xiaomi.settings.speaker;
+package org.lineageos.settings.speaker;
 
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
@@ -31,7 +31,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.SwitchPreference;
 
-import com.xiaomi.settings.R;
+import org.lineageos.settings.R;
 
 import java.io.IOException;
 

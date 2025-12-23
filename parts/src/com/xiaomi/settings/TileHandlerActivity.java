@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.xiaomi.settings;
+package org.lineageos.settings;
 
 import android.app.Activity;
 import android.content.ComponentName;
@@ -28,18 +28,18 @@ import android.util.Log;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.xiaomi.settings.autohbm.AutoHbmActivity;
-import com.xiaomi.settings.autohbm.AutoHbmTileService;
-import com.xiaomi.settings.autohbm.HbmTileService;
+import org.lineageos.settings.autohbm.AutoHbmActivity;
+import org.lineageos.settings.autohbm.AutoHbmTileService;
+import org.lineageos.settings.autohbm.HbmTileService;
 
-import com.xiaomi.settings.thermal.ThermalSettingsActivity;
-import com.xiaomi.settings.thermal.ThermalTileService;
+import org.lineageos.settings.thermal.ThermalSettingsActivity;
+import org.lineageos.settings.thermal.ThermalTileService;
 
-import com.xiaomi.settings.powertools.PowerProfileTileService;
-import com.xiaomi.settings.powertools.PowertoolsActivity;
+import org.lineageos.settings.powertools.PowerProfileTileService;
+import org.lineageos.settings.powertools.PowertoolsActivity;
 
-import com.xiaomi.settings.hypercharge.HyperChargeTileService;
-import com.xiaomi.settings.hypercharge.HyperChargeSettingsActivity;
+import org.lineageos.settings.hypercharge.HyperChargeTileService;
+import org.lineageos.settings.hypercharge.HyperChargeSettingsActivity;
 
 
 public final class TileHandlerActivity extends Activity {

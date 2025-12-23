@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.xiaomi.settings;
+package org.lineageos.settings;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -31,7 +31,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.xiaomi.settings.R;
+import org.lineageos.settings.R;
 
 public class CustomSeekBarPreference extends Preference implements SeekBar.OnSeekBarChangeListener {
     protected final String TAG = getClass().getName();

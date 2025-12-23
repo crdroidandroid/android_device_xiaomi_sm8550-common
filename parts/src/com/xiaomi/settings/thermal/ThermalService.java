@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.xiaomi.settings.thermal;
+package org.lineageos.settings.thermal;
 
 import android.app.ActivityTaskManager;
 import android.app.TaskStackListener;

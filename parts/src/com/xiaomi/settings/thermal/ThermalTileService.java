@@ -1,4 +1,4 @@
-package com.xiaomi.settings.thermal;
+package org.lineageos.settings.thermal;
 
 import android.app.Service;
 import android.service.quicksettings.Tile;
@@ -8,7 +8,7 @@ import androidx.preference.PreferenceManager;
 import android.graphics.drawable.Icon;
 import android.util.Log;
 
-import com.xiaomi.settings.R;
+import org.lineageos.settings.R;
 
 public class ThermalTileService extends TileService {
     private static final String TAG = "ThermalTileService";

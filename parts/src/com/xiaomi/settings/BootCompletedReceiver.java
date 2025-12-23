@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package com.xiaomi.settings;
+package org.lineageos.settings;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -20,14 +20,14 @@ import android.view.Display.HdrCapabilities;
 
 import androidx.preference.PreferenceManager;
 
-import com.xiaomi.settings.autohbm.AutoHbmActivity;
-import com.xiaomi.settings.autohbm.AutoHbmFragment;
-import com.xiaomi.settings.autohbm.AutoHbmTileService;
-import com.xiaomi.settings.thermal.ThermalService;
-import com.xiaomi.settings.thermal.ThermalUtils;
-import com.xiaomi.settings.touch.TouchOrientationService;
-import com.xiaomi.settings.touch.TouchUtils;
-import com.xiaomi.settings.utils.ComponentUtils;
+import org.lineageos.settings.autohbm.AutoHbmActivity;
+import org.lineageos.settings.autohbm.AutoHbmFragment;
+import org.lineageos.settings.autohbm.AutoHbmTileService;
+import org.lineageos.settings.thermal.ThermalService;
+import org.lineageos.settings.thermal.ThermalUtils;
+import org.lineageos.settings.touch.TouchOrientationService;
+import org.lineageos.settings.touch.TouchUtils;
+import org.lineageos.settings.utils.ComponentUtils;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
     private static final String TAG = "XiaomiParts";
@@ -70,7 +70,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
             if (!isHyperChargeEnabled) {
                 if (DEBUG) Log.d(TAG, "HyperCharge is set to OFF, starting limit service on boot.");
-                Intent serviceIntent = new Intent(context, com.xiaomi.settings.hypercharge.HyperChargeService.class);
+                Intent serviceIntent = new Intent(context, org.lineageos.settings.hypercharge.HyperChargeService.class);
                 context.startService(serviceIntent);
             }
         } catch (Exception e) {

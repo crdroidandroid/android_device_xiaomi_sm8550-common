@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.xiaomi.settings.powertools;
+package org.lineageos.settings.powertools;
 
 import android.app.PendingIntent;
 import android.content.SharedPreferences;
@@ -26,7 +26,7 @@ import android.util.Log;
 
 import androidx.preference.PreferenceManager;
 
-import com.xiaomi.settings.R;
+import org.lineageos.settings.R;
 
 public class PowerProfileTileService extends TileService {
     private static final String TAG = "PowerProfileTileService";

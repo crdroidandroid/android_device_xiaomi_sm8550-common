@@ -4,12 +4,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package com.xiaomi.settings.touch;
+package org.lineageos.settings.touch;
 
 import android.util.Log;
 
-import com.xiaomi.settings.Constants;
-import com.xiaomi.settings.utils.FileUtils;
+import org.lineageos.settings.Constants;
+import org.lineageos.settings.utils.FileUtils;
 
 public class TouchUtils {
 

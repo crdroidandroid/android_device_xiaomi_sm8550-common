@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.xiaomi.settings.powertools;
+package org.lineageos.settings.powertools;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -26,7 +26,7 @@ import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 import androidx.preference.SwitchPreferenceCompat;
 
-import com.xiaomi.settings.R;
+import org.lineageos.settings.R;
 
 public class PowertoolsSettingsFragment extends PreferenceFragmentCompat
         implements Preference.OnPreferenceChangeListener,

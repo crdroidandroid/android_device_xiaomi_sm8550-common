@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.xiaomi.settings.autohbm;
+package org.lineageos.settings.autohbm;
 
 import android.content.Context;
 import android.content.Intent;
@@ -40,10 +40,10 @@ import androidx.preference.PreferenceManager;
 import com.android.settingslib.widget.MainSwitchPreference;
 import com.android.settingslib.widget.UsageProgressBarPreference;
 
-import com.xiaomi.settings.Constants;
-import com.xiaomi.settings.CustomSeekBarPreference;
-import com.xiaomi.settings.R;
-import com.xiaomi.settings.utils.TileUtils;
+import org.lineageos.settings.Constants;
+import org.lineageos.settings.CustomSeekBarPreference;
+import org.lineageos.settings.R;
+import org.lineageos.settings.utils.TileUtils;
 
 public class AutoHbmFragment extends PreferenceFragmentCompat
         implements OnCheckedChangeListener, SensorEventListener, Preference.OnPreferenceChangeListener {

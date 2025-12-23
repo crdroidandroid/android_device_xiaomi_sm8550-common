@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.xiaomi.settings.powertools;
+package org.lineageos.settings.powertools;
 
 import android.app.ActivityManager;
 import android.app.Notification;
@@ -32,8 +32,8 @@ import android.util.Log;
 
 import androidx.preference.PreferenceManager;
 
-import com.xiaomi.settings.R;
-import com.xiaomi.settings.utils.FileUtils;
+import org.lineageos.settings.R;
+import org.lineageos.settings.utils.FileUtils;
 
 import java.util.Arrays;
 import java.util.List;

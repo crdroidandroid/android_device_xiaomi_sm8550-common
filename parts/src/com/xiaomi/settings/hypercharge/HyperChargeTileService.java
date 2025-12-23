@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package com.xiaomi.settings.hypercharge;
+package org.lineageos.settings.hypercharge;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,8 +15,8 @@ import android.service.quicksettings.TileService;
 import android.util.Log;
 import androidx.preference.PreferenceManager;
 
-import com.xiaomi.settings.Constants;
-import com.xiaomi.settings.R;
+import org.lineageos.settings.Constants;
+import org.lineageos.settings.R;
 
 public class HyperChargeTileService extends TileService {
 

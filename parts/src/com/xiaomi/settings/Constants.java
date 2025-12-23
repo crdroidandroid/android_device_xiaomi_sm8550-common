@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.xiaomi.settings;
+package org.lineageos.settings;
 
 public class Constants {
 

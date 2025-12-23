@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package com.xiaomi.settings.touch;
+package org.lineageos.settings.touch;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,8 +12,8 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragment;
 import com.android.settingslib.widget.MainSwitchPreference;
 
-import com.xiaomi.settings.Constants;
-import com.xiaomi.settings.R;
+import org.lineageos.settings.Constants;
+import org.lineageos.settings.R;
 
 public class EdgeRejectionSettingsFragment extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {

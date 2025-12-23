@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.xiaomi.settings.powertools;
+package org.lineageos.settings.powertools;
 
 import android.os.SystemProperties;
 

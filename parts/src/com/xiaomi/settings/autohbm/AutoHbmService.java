@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.xiaomi.settings.autohbm;
+package org.lineageos.settings.autohbm;
 
 import android.app.KeyguardManager;
 import android.app.Service;
@@ -35,8 +35,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-import com.xiaomi.settings.Constants;
-import com.xiaomi.settings.utils.FileUtils;
+import org.lineageos.settings.Constants;
+import org.lineageos.settings.utils.FileUtils;
 
 public class AutoHbmService extends Service {
 

@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package com.xiaomi.settings.hypercharge;
+package org.lineageos.settings.hypercharge;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,8 +16,8 @@ import androidx.preference.SwitchPreference;
 import com.android.settingslib.widget.MainSwitchPreference;
 // REMOVED: import com.android.settingslib.widget.OnMainSwitchChangeListener;
 
-import com.xiaomi.settings.Constants;
-import com.xiaomi.settings.R;
+import org.lineageos.settings.Constants;
+import org.lineageos.settings.R;
 
 public class HyperChargeSettingsFragment extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
