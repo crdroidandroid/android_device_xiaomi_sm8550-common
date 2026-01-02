@@ -37,7 +37,7 @@ PRODUCT_PACKAGES += \
 
 # Dolby Audio
 PRODUCT_PACKAGES += \
-    XiaomiDolby
+    DolbyAtmos
 
 # Camera Extensions permissions
 PRODUCT_COPY_FILES += \
