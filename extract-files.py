@@ -87,7 +87,6 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/hw/audio.primary.kalama.so',
         'vendor/lib64/libcodec2_soft_ac4dec.so',
         'vendor/lib64/libcodec2_soft_ddpdec.so',
-        'vendor/lib64/libDecoderProcessor.so',
         'vendor/lib64/libdlbdsservice.so',
         'vendor/lib64/libdlbpreg.so',
         'vendor/lib64/libqc2audio_hwaudiocodec.so',
@@ -101,8 +100,6 @@ blob_fixups: blob_fixups_user_type = {
             'libstagefright_foundation.so',
             'libstagefright_foundation-v33.so',
         ),
-    'vendor/lib64/c2.dolby.client.so' : blob_fixup()
-        .add_needed('dolbycodec_shim.so'),
     'vendor/lib64/libqcodec2_core.so' : blob_fixup()
         .add_needed('libcodec2_shim.so'),
     'vendor/lib64/vendor.libdpmframework.so': blob_fixup()
@@ -112,10 +109,22 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup()
         .add_needed('libbinder_shim.so'),
     (
-        'vendor/etc/media_codecs_kalama.xml',
         'vendor/etc/media_codecs_kalama_vendor.xml',
     ): blob_fixup()
         .regex_replace('.+media_codecs_(google_audio|google_c2|google_telephony|vendor_audio).+\n', ''),
+    (
+        'vendor/etc/media_codecs_kalama_vendor_without_dvenc.xml',
+    ): blob_fixup()
+        .regex_replace(r'\s*<MediaCodec\b[^>]*name=\"c2\.dolby\.[^>]*>[\s\S]*?<\/MediaCodec>', ''),
+    (
+        'vendor/etc/media_codecs_kalama.xml',
+    ): blob_fixup()
+        .regex_replace(r'\s*<MediaCodec\b[^>]*name=\"c2\.dolby\.[^>]*>[\s\S]*?<\/MediaCodec>', '')
+        .regex_replace('.+media_codecs_(google_audio|google_c2|google_telephony|vendor_audio).+\n', ''),
+    (
+        'vendor/etc/vintf/manifest/c2_manifest_vendor.xml',
+    ): blob_fixup()
+        .regex_replace(r'\s*<fqname>@1\.0::IComponentStore/dolby</fqname>', ''),
     (
         'vendor/lib64/libstfactory-vendor.so',
         'odm/lib64/nfc_nci.nqx.default.hw.so'
