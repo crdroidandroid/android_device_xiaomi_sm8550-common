@@ -53,31 +53,16 @@ vendor/lib64/hw/com.dsi.ant@1.0-impl.so
 system_ext/framework/camerax-vendor-extensions.jar
 
 # Audio
-odm/etc/UserDefinedMi.udm
-odm/etc/XiaoAiNiZaiNaMi.udm
-odm/etc/XiaoAiTongXueMi.udm
-odm/etc/audio-test-config
-odm/etc/audio/RES1K.wav
-odm/etc/audio/bottom_spk.wav
-odm/etc/audio/bottom_spk_hp.wav
 odm/etc/audio/hrtf5c.bin
 odm/etc/audio/misound_karaoke_res.bin
 odm/etc/audio/misound_karaokemix_res.bin
 odm/etc/audio/misound_res_headphone.bin
 odm/etc/audio/misound_res_spk.bin
 odm/etc/audio/misound_res_spk4ch.bin
-odm/etc/audio/rcv.wav
-odm/etc/audio/rcv_hp.wav
-odm/etc/audio/rcv_seal.wav
-odm/etc/audio/silent-3sec.wav
-odm/etc/audio/spk.wav
-odm/etc/audio/top_spk.wav
-odm/etc/audio/top_spk_hp.wav
 odm/etc/backend_conf.xml
 odm/etc/init/init.cirrus.rc
 odm/lib64/libaudioroute_ext.so
 odm/lib64/libcrussp.so;DISABLE_CHECKELF
-vendor/etc/audio_diag.cfg
 vendor/etc/card-defs.xml
 vendor/etc/default_volume_tables.xml
 vendor/etc/kvh2xml.xml
