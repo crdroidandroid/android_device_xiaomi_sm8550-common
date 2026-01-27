@@ -1,5 +1,5 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from Xiaomi 13 Pro (OS2.0.212.0.VMBCNXM).
+## are from Xiaomi 13 Pro (OS3.0.4.0.VMKCNXM).
 
 # Current blobs with ELF checks disabled:
 # audio.primary.kalama.so depends on liblx-osal and vendor.qti.hardware.AGMIPC@1.0-impl, which are gnu makefile targets
@@ -908,6 +908,9 @@ vendor/bin/poweroffm64
 vendor/etc/init/general_service.rc
 vendor/etc/init/minidump.rc
 vendor/etc/tzlog.dict
+
+# MISAUTH
+odm/lib64/vendor.xiaomi.hardware.misauth-V1-ndk_platform.so
 
 # NFC
 odm/bin/hw/android.hardware.nfc@1.2-service-st
