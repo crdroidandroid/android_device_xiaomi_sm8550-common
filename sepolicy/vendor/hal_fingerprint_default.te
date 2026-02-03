@@ -15,7 +15,7 @@ allow hal_fingerprint_default vendor_hal_perf_hwservice:hwservice_manager find;
 allow hal_fingerprint_default vendor_sp_keymaster_device:chr_file rw_file_perms;
 allow hal_fingerprint_default vendor_sysfs_displayfeature:dir r_dir_perms;
 allow hal_fingerprint_default vendor_sysfs_displayfeature:file rw_file_perms;
-allow vendor_hal_perf_default hal_fingerprint_default:dir { search read write };
+allow vendor_hal_perf_default hal_fingerprint_default:dir { search read };
 allow vendor_hal_perf_default hal_fingerprint_default:file { read write open getattr };
 allow hal_fingerprint_default vendor_sysfs_sensors:file rw_file_perms;
 allow hal_fingerprint_default self:netlink_socket create_socket_perms_no_ioctl;
