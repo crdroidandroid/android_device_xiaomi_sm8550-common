@@ -64,8 +64,13 @@ vendor/lib64/libdsd2pcm.so
 vendor/lib64/hw/sound_trigger.primary.kalama.so
 vendor/etc/vintf/manifest/manifest_non_qmaa_extn.xml:vendor/etc/vintf/manifest/manifest_non_qmaa_extn_vendor.xml
 vendor/etc/vintf/manifest/manifest_non_qmaa.xml:vendor/etc/vintf/manifest/manifest_non_qmaa_vendor.xml
+vendor/lib64/libeai_fixed.so
+vendor/lib64/libeai_float.so
 vendor/lib64/libfcsam.so;FIX_SONAME
 vendor/lib64/libkaraokepal.so;DISABLE_CHECKELF
+vendor/lib64/liblistensoundmodel2vendor.so
+vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0-impl.so
+vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0.so
 vendor/lib64/libmiam.so;FIX_SONAME
 vendor/lib64/libmisfpsop.so
 vendor/lib64/libmisoundsa.so
@@ -648,7 +653,7 @@ system_ext/framework/com.android.hotwordenrollment.common.util.jar
 
 # IMS (system)
 system/lib64/vendor.qti.diaghal-V1-ndk.so
-system_ext/app/ImsRcsService/ImsRcsService.apk
+system_ext/app/ImsRcsService/ImsRcsService.apk|a32c6a69f9eb918398fdc63c6ea25bbecebbd2b8
 system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml
 system_ext/etc/permissions/vendor.qti.ims.rcsservice.xml
 system_ext/etc/sysconfig/qti_telephony_system_packages_config.xml
@@ -691,6 +696,7 @@ system_ext/lib64/libdiag_system.so
 system_ext/lib64/libimscamera_jni.so
 system_ext/lib64/libimsmedia_jni.so
 system_ext/lib64/vendor.qti.ImsRtpService-V1-ndk.so
+system_ext/lib64/vendor.qti.ImsRtpService-V2-ndk.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.1.so
 system_ext/priv-app/QtiTelephony/QtiTelephony.apk;REQUIRED=QtiTelephonyCompat
