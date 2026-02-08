@@ -14,12 +14,25 @@
         android:defaultValue="true" />
 
     <PreferenceCategory
+        android:title="@string/hypercharge_settings_category">
+
+        <ListPreference
+            android:key="hypercharge_limit"
+            android:title="@string/hypercharge_limit_title"
+            android:summary="%s"
+            android:entries="@array/hypercharge_limit_entries"
+            android:entryValues="@array/hypercharge_limit_values"
+            android:defaultValue="22000000"
+            app:dependency="hypercharge_status" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/hypercharge_description_title">
 
         <Preference
             android:summary="@string/hypercharge_description_summary"
-            app:selectable="false"
-            xmlns:app="http://schemas.android.com/apk/res-auto"/>
+            app:selectable="false" />
 
     </PreferenceCategory>
 

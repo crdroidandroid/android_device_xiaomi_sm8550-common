@@ -25,6 +25,7 @@ import org.lineageos.settings.thermal.ThermalUtils;
 import org.lineageos.settings.touch.TouchOrientationService;
 import org.lineageos.settings.touch.TouchUtils;
 import org.lineageos.settings.utils.ComponentUtils;
+import org.lineageos.settings.hypercharge.HyperChargeService;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
     private static final String TAG = "XiaomiParts";
@@ -62,16 +63,20 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         try {
             SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
             boolean isHyperChargeEnabled = prefs.getBoolean(Constants.KEY_HYPERCHARGE_STATUS, true);
+            
+            // Note: We use a try-catch here as well just in case boot happens before UI sanitization
+            String currentLimit;
+            try {
+                currentLimit = prefs.getString(Constants.KEY_HYPERCHARGE_LIMIT, Constants.CHARGE_LIMIT_120W);
+            } catch (ClassCastException e) {
+                currentLimit = Constants.CHARGE_LIMIT_120W;
+            }
 
-            if (DEBUG) Log.d(TAG, "HyperCharge state on boot: " + (isHyperChargeEnabled ? "ON" : "OFF (Limited)"));
-
-            if (!isHyperChargeEnabled) {
-                if (DEBUG) Log.d(TAG, "HyperCharge is set to OFF, starting limit service on boot.");
-                Intent serviceIntent = new Intent(context, org.lineageos.settings.hypercharge.HyperChargeService.class);
-                context.startService(serviceIntent);
+            if (!isHyperChargeEnabled || !Constants.CHARGE_LIMIT_120W.equals(currentLimit)) {
+                context.startService(new Intent(context, HyperChargeService.class));
             }
         } catch (Exception e) {
-            Log.e(TAG, "Failed to start HyperChargeService", e);
+            Log.e(TAG, "Failed to start HyperChargeService on boot", e);
         }
 
         try {

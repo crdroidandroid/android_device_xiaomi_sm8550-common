@@ -32,6 +32,9 @@ on boot
     chown system system /sys/class/power_supply/battery/constant_charge_current
     chmod 0664 /sys/class/power_supply/battery/constant_charge_current
 
+    chown system system /sys/class/qcom-battery/fastchg_mode
+    chmod 0664 /sys/class/qcom-battery/fastchg_mode
+
 on post-fs-data
     mkdir /data/vendor/misc 01771 system system
     mkdir /data/vendor/misc/mi_fp 0770 system system
