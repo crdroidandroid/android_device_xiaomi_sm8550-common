@@ -38,7 +38,7 @@ PRODUCT_PACKAGES += \
 
 # Dolby Audio
 PRODUCT_PACKAGES += \
-    DolbyAtmos
+    LunarisDolby
 
 # Camera Extensions permissions
 PRODUCT_COPY_FILES += \
