@@ -50,7 +50,6 @@
     <ctl name="T Boost Target Voltage" value="0" />
     <ctl name="T Fast Use Case Switch Enable" value="1"/>
     <ctl name="T Digital PCM Volume"  value="817"/>
-    <ctl name="T Passport" value="1"/>
 
     <ctl name="B DSP1 Firmware" value="Protection" />
     <ctl name="B DSP1 Preload Switch" value="1" />
@@ -75,7 +74,6 @@
     <ctl name="B Boost Target Voltage" value="0" />
     <ctl name="B Fast Use Case Switch Enable" value="1"/>
     <ctl name="B Digital PCM Volume"  value="817"/>
-    <ctl name="B Passport" value="1"/>
 
     <ctl name="T Spksw Gpio Swtich"  value="0"/>
     <!-- cirrus CS35L41 controls end -->>
@@ -90,8 +88,6 @@
         <ctl name="B AMP Enable Switch" value="1" />
         <ctl name="T Noise Gate" value="16245" />
         <ctl name="B Noise Gate" value="16245" />
-        <ctl name="T Passport" value="1"/>
-        <ctl name="B Passport" value="1"/>
     </path>
 
     <path name="speaker-mono">
