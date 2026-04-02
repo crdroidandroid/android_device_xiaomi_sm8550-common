@@ -142,6 +142,8 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libaudiocloudctrl.so',
     ): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
+    'vendor/etc/init/hw/init.batterysecret.rc' : blob_fixup()
+        .regex_replace('group system system wakelock', 'group system system usb wakelock'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
