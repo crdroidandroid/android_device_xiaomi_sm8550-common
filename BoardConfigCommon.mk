@@ -168,16 +168,13 @@ $(foreach p, $(call to-upper, $(BOARD_XIAOMI_DYNAMIC_PARTITIONS_PARTITION_LIST))
 BOARD_PRODUCTIMAGE_MINIMAL_PARTITION_RESERVED_SIZE := false
 include vendor/lineage/config/BoardConfigReservedSize.mk
 
-BOARD_ROOT_EXTRA_FOLDERS += vendor/firmware vendor/firmware_mnt
-BOARD_ROOT_EXTRA_SYMLINKS += /lib/modules:/vendor/lib/modules
-
 # Platform
 TARGET_BOARD_PLATFORM := kalama
 TARGET_BOOTLOADER_BOARD_NAME := kalama
 
 # Recovery
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/init/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
