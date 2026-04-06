@@ -1624,13 +1624,6 @@
         </interface>
     </hal>
     <hal format="aidl" optional="true">
-        <name>vendor.qti.qegahal</name>
-        <interface>
-            <name>IQegahal</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
         <name>vendor.qti.qepi</name>
         <interface>
             <name>IQEPI</name>
