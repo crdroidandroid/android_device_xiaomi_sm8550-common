@@ -21,6 +21,7 @@ vendor.vidhance.video.vs.cropfactor             u:object_r:vendor_camera_prop:s0
 # Fingerprint
 persist.vendor.fingerprint. u:object_r:vendor_fp_prop:s0
 persist.vendor.sys.fp.      u:object_r:vendor_fp_prop:s0
+ro.hardware.fp.udfps 		u:object_r:vendor_fp_prop:s0
 
 # Thermal
 vendor.sys.thermal.                             u:object_r:vendor_thermal_normal_prop:s0
@@ -37,6 +38,11 @@ ro.vendor.oem.sno                               u:object_r:vendor_radio_prop:s0
 ro.vendor.ril                           u:object_r:vendor_public_vendor_default_prop:s0
 ro.vendor.ril.svlte1x                   u:object_r:vendor_radio_prop:s0
 ro.vendor.ril.svdo                      u:object_r:vendor_radio_prop:s0
+
+# Mlipay
+persist.vendor.sys.pay.fido u:object_r:vendor_payment_security_prop:s0
+persist.vendor.sys.pay.fido2 u:object_r:vendor_payment_security_prop:s0
+persist.vendor.sys.pay.ifaa u:object_r:vendor_payment_security_prop:s0
 
 # NFC
 ro.vendor.nfc. u:object_r:vendor_nfc_mi_prop:s0
