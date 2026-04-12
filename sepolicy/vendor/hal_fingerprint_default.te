@@ -30,3 +30,4 @@ r_dir_file(hal_fingerprint_default, mnt_vendor_file)
 r_dir_file(hal_fingerprint_default, vendor_persist_qti_fp_file)
 
 allow hal_fingerprint_default vendor_displayfeature_device:chr_file { ioctl open read write };
+set_prop(hal_fingerprint_default, vendor_fp_prop)
