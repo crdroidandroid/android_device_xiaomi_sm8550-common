@@ -319,6 +319,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libvndfwk_detect_jni.qti_vendor
 
+# QSPA
+PRODUCT_PACKAGES += \
+    vendor.qti.qspa-service
+
 # Radio
 PRODUCT_PACKAGES += \
     rfs_msm_mpss_readonly_mbnconfig_symlink
