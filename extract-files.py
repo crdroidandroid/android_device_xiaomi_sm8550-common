@@ -53,7 +53,6 @@ lib_fixups: lib_fixups_user_type = {
         'libagmmixer',
         'libats',
         'libpalclient',
-        'libwpa_client',
         'vendor.qti.hardware.AGMIPC@1.0-impl',
     ): lib_fixup_remove,
 }
