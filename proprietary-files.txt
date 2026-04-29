@@ -1220,13 +1220,13 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
 
 # RIL (UIM)
-product/app/uimgbaservice/uimgbaservice.apk|34ee0fbed345230a4fc537696e285aaa0778a756
-product/etc/permissions/UimGba.xml|03eb0916550720f168c4f66acdc3fc4abf9993ef
-product/etc/permissions/UimGbaManager.xml|b57f4d048d860d27367df0f0feee6cc78991dfe3
-product/etc/permissions/UimService.xml|cb32679d345f98d5b8ec175c5c3429a2e3718882
-product/framework/uimgbalibrary.jar|7f3901cbbf91a5e20e1e1921f5f0cb30ee0562fc
-product/framework/uimgbamanagerlibrary.jar|cb372891980e4b8cf9c915d4083585c8819356f1
-product/framework/uimservicelibrary.jar|640673acc7af1496c0d2d4763d007a4f7ea7c6cb
+product/app/uimgbaservice/uimgbaservice.apk
+product/etc/permissions/UimGba.xml
+product/etc/permissions/UimGbaManager.xml
+product/etc/permissions/UimService.xml
+product/framework/uimgbalibrary.jar
+product/framework/uimgbamanagerlibrary.jar
+product/framework/uimservicelibrary.jar
 
 # RemoteFS
 vendor/bin/rmt_storage
