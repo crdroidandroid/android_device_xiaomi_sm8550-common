@@ -28,4 +28,3 @@ media.settings.xml=/odm/etc/media_profiles_kalama.xml
 # RIL
 rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ril.subscription.types=NV,RUIM
-ro.telephony.default_network=33,33
