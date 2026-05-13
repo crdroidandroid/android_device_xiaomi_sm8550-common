@@ -329,7 +329,6 @@ persist.dbg.vt_avail_ovr=1
 persist.dbg.wfc_avail_ovr=1
 ro.com.android.dataroaming=true
 ro.telephony.default_network=33,33
-ro.vendor.radio.build_region=cn
 persist.vendor.radio.enableadvancedscan=true
 
 # RCS
