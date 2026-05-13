@@ -30,9 +30,6 @@ ro.vendor.use_data_netmgrd=true
 # Media
 media.settings.xml=/odm/etc/media_profiles_kalama.xml
 
-# QEMU
-qemu.hw.mainkeys=0
-
 # RIL
 rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ril.subscription.types=NV,RUIM
