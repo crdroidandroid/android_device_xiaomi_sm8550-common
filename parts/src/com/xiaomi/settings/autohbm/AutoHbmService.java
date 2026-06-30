@@ -61,11 +61,11 @@ public class AutoHbmService extends Service {
     }
 
     public void deactivateLightSensorRead() {
-        submit(() -> {
+        if (mSensorManager != null) {
             mSensorManager.unregisterListener(mSensorEventListener);
-            mAutoHbmActive = false;
-            restoreBrightness();
-        });
+        }
+        mAutoHbmActive = false;
+        restoreBrightness();
     }
 
     private void setBrightnessDirectly(int brightness) {
@@ -178,9 +178,9 @@ public class AutoHbmService extends Service {
     public void onDestroy() {
         super.onDestroy();
         unregisterReceiver(mScreenStateReceiver);
-        PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
-        if (pm.isInteractive()) {
-            deactivateLightSensorRead();
+        deactivateLightSensorRead();
+        if (mExecutorService != null) {
+            mExecutorService.shutdownNow();
         }
     }
 
