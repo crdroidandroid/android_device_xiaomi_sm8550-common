@@ -884,9 +884,6 @@ vendor/etc/media_kalama/video_system_specs.json
 vendor/etc/media_profiles.xml
 vendor/etc/media_profiles_V1_0.xml
 
-# Memory
-vendor/lib64/libvmmem.so
-
 # Minidump
 vendor/bin/minidump64
 vendor/bin/poweroffm64
