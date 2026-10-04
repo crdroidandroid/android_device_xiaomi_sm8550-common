@@ -302,6 +302,7 @@ ro.oem_unlock_supported=1
 
 # Power
 ro.vendor.extension_library=libqti-perfd-client.so
+vendor.powerhal.interaction.min=500
 
 # PSI
 vendor.pasr.activemode.enabled=true
