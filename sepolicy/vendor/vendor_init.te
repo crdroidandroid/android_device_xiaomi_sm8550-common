@@ -5,3 +5,7 @@ set_prop(vendor_init, vendor_fp_prop)
 set_prop(vendor_init, vendor_thermal_normal_prop)
 set_prop(vendor_init, audio_prop)
 set_prop(vendor_init, vendor_qcc_prop)
+
+# Allow vendor_init to disable WALT input boost
+allow vendor_init proc_walt:dir search;
+allow vendor_init proc_walt:file w_file_perms;
