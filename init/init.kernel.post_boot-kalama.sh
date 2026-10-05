@@ -131,7 +131,7 @@ if [ $rev == "1.0" ] || [ $rev == "1.1" ]; then
 else
 	echo 1267200 > /sys/devices/system/cpu/cpufreq/policy0/walt/hispeed_freq
 fi
-echo 556800 > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
+echo 441600 > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
 echo 1 > /sys/devices/system/cpu/cpufreq/policy0/walt/pl
 
 # configure input boost settings

@@ -14,7 +14,7 @@
       "Path": "/sys/kernel/msm_performance/parameters/cpu_min_freq",
       "Values": [
         "0:9999999 3:9999999 7:9999999",
-        "0:556800 3:614400 7:864000"
+        "0:441600 3:614400 7:864000"
       ],
       "ResetOnInit": true
     },
