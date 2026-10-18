@@ -67,8 +67,6 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('android.hardware.security.rkp-V3-ndk.so'),
     'vendor/etc/seccomp_policy/qwesd@2.0.policy' : blob_fixup()
         .add_line_if_missing('pipe2: 1'),
-    'vendor/etc/qcril_database/upgrade/config/6.0_config.sql' : blob_fixup()
-        .regex_replace('(persist\\.vendor\\.radio\\.redir_party_num.*)true', '\\1false'),
     (
         'odm/lib64/libaudioroute_ext.so',
         'vendor/lib64/libar-pal.so',
