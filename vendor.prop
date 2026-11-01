@@ -297,7 +297,6 @@ ro.hardware.keystore_desede=true
 debug.stagefright.c2inputsurface=-1
 debug.stagefright.ccodec=4
 debug.c2.use_dmabufheaps=1
-ro.mediaserver.64b.enable=true
 vendor.mm.enable.qcom_parser=16777215
 
 # OEM unlock
@@ -307,14 +306,8 @@ ro.oem_unlock_supported=1
 ro.vendor.extension_library=libqti-perfd-client.so
 vendor.powerhal.interaction.min=1000
 
-# PSI
-vendor.pasr.activemode.enabled=true
-
 # QcomSysd
 persist.vendor.qcomsysd.enabled=1
-
-# QSPM
-ro.vendor.qspm.enable=true
 
 # Radio
 persist.vendor.radio.apm_sim_not_pwdn=1
@@ -354,9 +347,6 @@ vendor.usb.use_gadget_hal=1
 ro.usb.uvc.disable_video_encode_flag=true
 ro.usb.uvc.enabled=true
 
-# Vibrator
-ro.vendor.mm.vibrator.sys_path=/sys/class/qcom-haptics
-
 # Volume
 ro.config.media_vol_steps=25
 ro.config.vc_call_vol_steps=11
@@ -365,11 +355,6 @@ ro.config.system_vol_steps=15
 
 # WLAN
 wifi.aware.interface=wifi-aware0
-ro.hardware.wlan.vendor=qcom
-ro.hardware.wlan.chip=kiwi_v2
-ro.hardware.wlan.mimo=1
-ro.hardware.wlan.dbs=2
-ro.vendor.net.enable_passpoint_r1=1
 
 # LOG
 persist.log.tag.android.hardware.power-service-qti=S
