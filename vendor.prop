@@ -284,6 +284,9 @@ graphics.gpu.profiler.support=true
 debug.sf.predict_hwc_composition_strategy=0
 debug.sf.treat_170m_as_sRGB=1
 
+# Incremental FS
+ro.incremental.enable=yes
+
 # Keyguard
 keyguard.no_require_sim=true
 
