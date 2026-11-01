@@ -348,6 +348,7 @@ vendor.usb.diag.func.name=ffs
 vendor.usb.use_ffs_mtp=1
 sys.usb.mtp.batchcancel=1
 vendor.usb.use_gadget_hal=1
+ro.usb.uvc.disable_video_encode_flag=true
 ro.usb.uvc.enabled=true
 
 # Vibrator
