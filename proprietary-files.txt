@@ -272,7 +272,6 @@ vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy
 vendor/lib64/vendor.qti.hardware.dsp@1.0.so
 
 # Data
-vendor/bin/ATFWD-daemon
 vendor/bin/adpl
 vendor/bin/netmgrd
 vendor/bin/port-bridge
@@ -286,7 +285,6 @@ vendor/etc/init/ipa_fws.rc
 vendor/etc/init/netmgrd.rc
 vendor/etc/init/port-bridge.rc
 vendor/etc/init/shsusrd.rc
-vendor/etc/seccomp_policy/atfwd@2.0.policy
 vendor/etc/vintf/manifest/dataconnection-saidl.xml
 vendor/lib64/libconfigdb.so
 vendor/lib64/libdsi_netctrl.so
