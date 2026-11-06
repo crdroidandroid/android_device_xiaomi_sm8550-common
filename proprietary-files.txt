@@ -525,7 +525,6 @@ vendor/etc/init/vendor.qsap.location.rc
 vendor/etc/init/vendor.qsap.qapeservice.rc
 vendor/etc/lowi.conf
 vendor/etc/sap.conf
-vendor/etc/sec_config
 vendor/etc/seccomp_policy/gnss@2.0-base.policy
 vendor/etc/seccomp_policy/gnss@2.0-edgnss-daemon.policy
 vendor/etc/seccomp_policy/gnss@2.0-qsap-location.policy
@@ -963,7 +962,6 @@ vendor/etc/init/init.qti.qcv.rc
 
 # QMI
 system/etc/sysconfig/qti_whitelist.xml
-vendor/bin/irsc_util
 vendor/bin/qmipriod
 vendor/bin/qrtr-cfg
 vendor/bin/qrtr-lookup
