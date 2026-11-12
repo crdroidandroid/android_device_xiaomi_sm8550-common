@@ -20,6 +20,7 @@ import android.util.Log;
 import androidx.preference.PreferenceManager;
 
 import org.lineageos.settings.Constants;
+import org.lineageos.settings.thermal.ChargeThermalGuard;
 import org.lineageos.settings.utils.FileUtils;
 
 public class HyperChargeService extends Service {
@@ -80,6 +81,7 @@ public class HyperChargeService extends Service {
             return; // Don't start the loop if it's a standard charger
         }
 
+        ChargeThermalGuard.hold();
         Log.d(TAG, "Monitoring loop started (interval=" + POLLING_INTERVAL_MS + "ms).");
         mMonitoringRunnable = new Runnable() {
             @Override
@@ -98,6 +100,7 @@ public class HyperChargeService extends Service {
                 } else {
                     Log.i(TAG, "HyperCharge mode lost. Stopping monitoring loop.");
                     mMonitoringRunnable = null; // Stop the loop if mode changes
+                    ChargeThermalGuard.release();
                 }
             }
         };
@@ -113,6 +116,7 @@ public class HyperChargeService extends Service {
     }
 
     private void stopMonitoring() {
+        ChargeThermalGuard.release();
         if (mPendingStartRunnable != null) {
             mHandler.removeCallbacks(mPendingStartRunnable);
             mPendingStartRunnable = null;

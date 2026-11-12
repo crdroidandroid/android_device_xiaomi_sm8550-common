@@ -240,7 +240,7 @@ public final class ThermalUtils {
         if (state != STATE_DEFAULT) {
             // A specific per-app profile is set, so take control
             SystemProperties.set(PROP_THERMAL_CONTROLLED_BY, CONTROLLED_BY_PERAPP);
-            FileUtils.writeLine(THERMAL_SCONFIG, THERMAL_STATE_MAP.get(state));
+            ChargeThermalGuard.write(THERMAL_STATE_MAP.get(state));
             dlog("Per-app thermal took control for " + packageName + " with state " + state);
         } else {
             // The app is set to Default, so give control back to Power Profile

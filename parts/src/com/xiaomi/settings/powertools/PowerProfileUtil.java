@@ -33,6 +33,7 @@ import android.util.Log;
 import androidx.preference.PreferenceManager;
 
 import org.lineageos.settings.R;
+import org.lineageos.settings.thermal.ChargeThermalGuard;
 import org.lineageos.settings.utils.FileUtils;
 
 import java.util.Arrays;
@@ -150,7 +151,7 @@ public class PowerProfileUtil {
                 break;
         }
 
-        boolean success = FileUtils.writeLine(THERMAL_SCONFIG, String.valueOf(thermalValue));
+        boolean success = ChargeThermalGuard.write(String.valueOf(thermalValue));
         Log.d(TAG, "Thermal mode changed to " + mModes[mode] + ": " + success);
 
         // Manage notifications based on the mode
