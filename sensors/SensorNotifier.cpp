@@ -28,7 +28,7 @@ SensorNotifier::~SensorNotifier() {
 
 Result SensorNotifier::initializeSensorQueue(std::string typeAsString, bool wakeup,
                                              sp<IEventQueueCallback> callback) {
-    Result res;
+    Result res = Result::UNKNOWN_ERROR;
     std::vector<SensorInfo> sensorList;
 
     mManager->getSensorList([&sensorList, &res](const auto& l, auto r) {

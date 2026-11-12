@@ -59,6 +59,12 @@ NonUiNotifier::~NonUiNotifier() {
 void NonUiNotifier::pollingFunction() {
     Result res;
 
+    if (mQueue == nullptr) {
+        LOG(ERROR) << "no event queue, xiaomi.sensor.nonui not available";
+        mActive = false;
+        return;
+    }
+
     // Enable states of touchscreen sensors
     const std::vector<const char*> paths = {
             "/sys/class/touch/touch_dev/fod_longpress_gesture_enabled",

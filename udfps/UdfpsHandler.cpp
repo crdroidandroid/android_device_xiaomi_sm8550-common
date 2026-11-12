@@ -13,6 +13,7 @@
 
 #include <poll.h>
 #include <sys/ioctl.h>
+#include <atomic>
 #include <fstream>
 #include <thread>
 
@@ -44,8 +45,14 @@ namespace {
 static std::shared_ptr<disp_event_resp> parseDispEvent(int fd) {
     disp_event header;
     ssize_t headerSize = read(fd, &header, sizeof(header));
-    if (headerSize < sizeof(header)) {
+    if (headerSize < 0 || static_cast<size_t>(headerSize) < sizeof(header)) {
         LOG(ERROR) << "unexpected display event header size: " << headerSize;
+        return nullptr;
+    }
+
+    // Consumers read data[0], so at least one payload byte is required
+    if (header.length <= sizeof(header)) {
+        LOG(ERROR) << "invalid display event length: " << header.length;
         return nullptr;
     }
 
@@ -58,10 +65,6 @@ static std::shared_ptr<disp_event_resp> parseDispEvent(int fd) {
     response->base = header;
 
     int dataLength = response->base.length - sizeof(response->base);
-    if (dataLength < 0) {
-        LOG(ERROR) << "invalid data length: " << response->base.length;
-        return nullptr;
-    }
 
     ssize_t dataSize = read(fd, &response->data, dataLength);
     if (dataSize < dataLength) {
@@ -222,7 +225,7 @@ class XiaomiSm8550UdfpsHandler : public UdfpsHandler {
     fingerprint_device_t* mDevice;
     android::base::unique_fd disp_fd_;
     android::base::unique_fd touch_fd_;
-    bool mAuthSuccess = false;
+    std::atomic<bool> mAuthSuccess{false};
 };
 
 static UdfpsHandler* create() {

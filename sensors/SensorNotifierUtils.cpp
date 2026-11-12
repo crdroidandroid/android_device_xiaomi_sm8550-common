@@ -32,8 +32,14 @@ bool readBool(int fd) {
 std::shared_ptr<disp_event_resp> parseDispEvent(int fd) {
     disp_event header;
     ssize_t headerSize = read(fd, &header, sizeof(header));
-    if (headerSize < sizeof(header)) {
+    if (headerSize < 0 || static_cast<size_t>(headerSize) < sizeof(header)) {
         LOG(ERROR) << "unexpected display event header size: " << headerSize;
+        return nullptr;
+    }
+
+    // Consumers read data[0], so at least one payload byte is required
+    if (header.length <= sizeof(header)) {
+        LOG(ERROR) << "invalid display event length: " << header.length;
         return nullptr;
     }
 
@@ -46,10 +52,6 @@ std::shared_ptr<disp_event_resp> parseDispEvent(int fd) {
     response->base = header;
 
     int dataLength = response->base.length - sizeof(response->base);
-    if (dataLength < 0) {
-        LOG(ERROR) << "invalid data length: " << response->base.length;
-        return nullptr;
-    }
 
     ssize_t dataSize = read(fd, &response->data, dataLength);
     if (dataSize < dataLength) {
