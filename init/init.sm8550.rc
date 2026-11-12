@@ -369,6 +369,9 @@ on post-fs-data
     #QCC mode configuration
     setprop vendor.qti.qcc.oper.mode 3
 
+    # WLAN SSR
+    write /sys/kernel/cnss/recovery 3
+
 on property:sys.boot_completed=1
     write /dev/kmsg "start qrtr-lookup after Boot completed "
     start qrtr-lookup
